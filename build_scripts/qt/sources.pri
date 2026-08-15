@@ -21,6 +21,7 @@ SOURCES += src/main.cpp\
     src/utils/setup.cpp \
     src/utils/paths.cpp \
     src/utils/FrameRateUtils.cpp \
+    src/utils/d3d11_overlay.cpp \
     src/keyboard_input/keyboard_input.cpp \
     src/keyboard_input/input_parser.cpp \
     src/settings/settings.cpp \
@@ -74,6 +75,7 @@ HEADERS += src/overlaycontroller.h \
     src/settings/internal/settings_object_data.h \
     src/settings/internal/settings_object_data.h \
     src/utils/update_rate.h \
+    src/utils/d3d11_overlay.h \
 
 
 win32 {
@@ -131,6 +133,7 @@ win32-msvc {
     INCLUDEPATH += third-party/openvr/headers \
                     third-party/easylogging++ \
                     third-party/policyconfig
+    LIBS += -ld3d11 -lopengl32
 }
 
 win32-clang-msvc {
