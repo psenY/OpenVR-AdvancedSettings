@@ -28,6 +28,8 @@
 
 #include "utils/ChaperoneUtils.h"
 
+#include "utils/d3d11_overlay.h"
+
 #include "tabcontrollers/SteamVRTabController.h"
 #include "tabcontrollers/ChaperoneTabController.h"
 #include "tabcontrollers/MoveCenterTabController.h"
@@ -110,6 +112,8 @@ private:
     std::unique_ptr<QOpenGLFramebufferObject> m_pFbo;
     QOpenGLContext m_openGLContext;
     QOffscreenSurface m_offscreenSurface;
+
+    advsettings::D3D11Overlay m_d3d11Overlay;
 
     QTimer m_pumpEventsTimer;
     std::unique_ptr<QTimer> m_pRenderTimer;
