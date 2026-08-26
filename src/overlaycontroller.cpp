@@ -23,6 +23,7 @@
 #include "utils/Matrix.h"
 #include "keyboard_input/input_sender.h"
 #include "settings/settings.h"
+#include "utils/setup.h"
 
 // application namespace
 namespace advsettings
@@ -358,7 +359,7 @@ OverlayController::~OverlayController()
     Shutdown();
 }
 
-void OverlayController::exitApp()
+void OverlayController::prepareToExit()
 {
     // save to settings that shutdown was safe
     setPreviousShutdownSafe( true );
@@ -373,10 +374,57 @@ void OverlayController::exitApp()
     m_chaperoneTabController.shutdown();
 
     Shutdown();
+}
+
+void OverlayController::exitApp()
+{
+    prepareToExit();
     QApplication::exit();
 
     LOG( INFO ) << "All systems exited.";
     exit( EXIT_SUCCESS );
+    // Does not fallthrough
+}
+
+void OverlayController::restartApp()
+{
+    QStringList arguments;
+    if ( m_desktopMode )
+    {
+        arguments.append( QString( "--%1" ).arg( argument::k_desktopMode ) );
+    }
+    if ( m_noSound )
+    {
+        arguments.append( QString( "--%1" ).arg( argument::k_forceNoSound ) );
+    }
+
+    const auto currentArguments = QCoreApplication::arguments();
+    const auto forceNoManifestArgument
+        = QString( "--%1" ).arg( argument::k_forceNoManifest );
+    if ( currentArguments.contains( forceNoManifestArgument ) )
+    {
+        arguments.append( forceNoManifestArgument );
+    }
+
+    prepareToExit();
+
+    const auto applicationPath = QCoreApplication::applicationFilePath();
+    const auto applicationDirectory = QCoreApplication::applicationDirPath();
+    const auto started = QProcess::startDetached(
+        applicationPath, arguments, applicationDirectory );
+
+    QApplication::exit();
+
+    if ( started )
+    {
+        LOG( INFO ) << "Application restart requested.";
+    }
+    else
+    {
+        LOG( ERROR ) << "Unable to restart application.";
+    }
+
+    exit( started ? EXIT_SUCCESS : EXIT_FAILURE );
     // Does not fallthrough
 }
 

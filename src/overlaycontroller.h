@@ -173,6 +173,7 @@ public: // I know it's an ugly hack to make them public to enable external
     bool m_incomingReset = false;
 
 private:
+    void prepareToExit();
     QPoint getMousePositionForEvent( vr::VREvent_Mouse_t mouse );
     void processInputBindings();
     void processMediaKeyBindings();
@@ -193,6 +194,7 @@ public:
 
     void Shutdown();
     Q_INVOKABLE void exitApp();
+    Q_INVOKABLE void restartApp();
     Q_INVOKABLE void setAutoChapProfileName( int index );
 
     bool isDashboardVisible()
