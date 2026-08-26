@@ -8,6 +8,10 @@ import "common"
 MyStackViewPage {
     id: settingsPage
     property bool languageSelectionInitialized: false
+    property string startupLanguage: ""
+    property bool languageRestartRequired:
+        languageSelectionInitialized
+        && SettingsTabController.language !== startupLanguage
 
     headerText: qsTr("Application Settings")
 
@@ -99,10 +103,20 @@ MyStackViewPage {
                     Layout.preferredWidth: 360
                     model: ["English", "日本語", "繁體中文", "简体中文"]
                     onCurrentIndexChanged: {
-                        if (settingsPage.languageSelectionInitialized) {
+                        if (settingsPage.languageSelectionInitialized && currentIndex >= 0) {
                             var languageCodes = ["en", "ja_JP", "zh_TW", "zh_CN"]
                             SettingsTabController.language = languageCodes[currentIndex]
                         }
+                    }
+                }
+
+                MyPushButton {
+                    id: restartButton
+                    visible: settingsPage.languageRestartRequired
+                    Layout.preferredWidth: 250
+                    text: qsTr("Restart OVRAS")
+                    onClicked: {
+                        OverlayController.restartApp()
                     }
                 }
             }
@@ -354,7 +368,8 @@ MyStackViewPage {
                 desktopModeToggleButton.checked = OverlayController.desktopModeToggle
 
                 var languageCodes = ["en", "ja_JP", "zh_TW", "zh_CN"]
-                var languageIndex = languageCodes.indexOf(SettingsTabController.language)
+                settingsPage.startupLanguage = SettingsTabController.language
+                var languageIndex = languageCodes.indexOf(settingsPage.startupLanguage)
                 languageComboBox.currentIndex = languageIndex >= 0 ? languageIndex : 0
                 settingsPage.languageSelectionInitialized = true
 

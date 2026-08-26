@@ -1351,97 +1351,102 @@
 <context>
     <name>SettingsPage</name>
     <message>
-        <location filename="../res/qml/SettingsPage.qml" line="12"/>
+        <location filename="../res/qml/SettingsPage.qml" line="15"/>
         <source>Application Settings</source>
         <translation>アプリケーション設定</translation>
     </message>
     <message>
-        <location filename="../res/qml/SettingsPage.qml" line="26"/>
+        <location filename="../res/qml/SettingsPage.qml" line="29"/>
         <source>Application Volume:</source>
         <translation>アプリケーション音量：</translation>
     </message>
     <message>
-        <location filename="../res/qml/SettingsPage.qml" line="161"/>
+        <location filename="../res/qml/SettingsPage.qml" line="116"/>
+        <source>Restart OVRAS</source>
+        <translation>OVRAS を再起動</translation>
+    </message>
+    <message>
+        <location filename="../res/qml/SettingsPage.qml" line="174"/>
         <source>Auto Apply Chaperone Profile:</source>
         <translation>シャペロンプロファイルを自動適用：</translation>
     </message>
     <message>
-        <location filename="../res/qml/SettingsPage.qml" line="112"/>
+        <location filename="../res/qml/SettingsPage.qml" line="125"/>
         <source>Autostart</source>
         <translation>自動起動</translation>
     </message>
     <message>
-        <location filename="../res/qml/SettingsPage.qml" line="229"/>
+        <location filename="../res/qml/SettingsPage.qml" line="242"/>
         <source>Custom Tick Rate: </source>
         <translation>カスタムティックレート:</translation>
     </message>
     <message>
-        <location filename="../res/qml/SettingsPage.qml" line="330"/>
+        <location filename="../res/qml/SettingsPage.qml" line="343"/>
         <source>Debug</source>
         <translation>デバッグ</translation>
     </message>
     <message>
-        <location filename="../res/qml/SettingsPage.qml" line="272"/>
+        <location filename="../res/qml/SettingsPage.qml" line="285"/>
         <source>Debug State: </source>
         <translation>デバッグ状態:</translation>
     </message>
     <message>
-        <location filename="../res/qml/SettingsPage.qml" line="119"/>
+        <location filename="../res/qml/SettingsPage.qml" line="132"/>
         <source>Desktop Mode (restart required)</source>
         <translation>デスクトップモード (再起動が必要)</translation>
     </message>
     <message>
-        <location filename="../res/qml/SettingsPage.qml" line="218"/>
+        <location filename="../res/qml/SettingsPage.qml" line="231"/>
         <source>Disable App Vsync</source>
         <translation>アプリの垂直同期を無効にする</translation>
     </message>
     <message>
-        <location filename="../res/qml/SettingsPage.qml" line="144"/>
+        <location filename="../res/qml/SettingsPage.qml" line="157"/>
         <source>Disable Notification of Newer Version Availability</source>
         <translation>新しいバージョンの利用可能性の通知を無効にする</translation>
     </message>
     <message>
-        <location filename="../res/qml/SettingsPage.qml" line="136"/>
+        <location filename="../res/qml/SettingsPage.qml" line="149"/>
         <source>Enable Automatic Crash Recovery of Chaperone Config</source>
         <translation>シャペロン構成の自動クラッシュ回復を有効にする</translation>
     </message>
     <message>
-        <location filename="../res/qml/SettingsPage.qml" line="207"/>
+        <location filename="../res/qml/SettingsPage.qml" line="220"/>
         <source>Exclusive Input Toggle (This enables Key Binding to Toggle state)</source>
         <translation>排他的入力トグル (これにより、キー バインドによるトグル状態の切り替えが可能になります)</translation>
     </message>
     <message>
-        <location filename="../res/qml/SettingsPage.qml" line="200"/>
+        <location filename="../res/qml/SettingsPage.qml" line="213"/>
         <source>Force Use SteamVR (Disable Oculus API [experimental])</source>
         <translation>SteamVR の強制使用 (Oculus API を無効にする [実験的])</translation>
     </message>
     <message>
-        <location filename="../res/qml/SettingsPage.qml" line="151"/>
+        <location filename="../res/qml/SettingsPage.qml" line="164"/>
         <source>Force Use SteamVR Chaperone (experimental + SteamVR restart required)</source>
         <translation>SteamVR シャペロンを強制使用（実験的、SteamVR の再起動が必要）</translation>
     </message>
     <message>
-        <location filename="../res/qml/SettingsPage.qml" line="93"/>
+        <location filename="../res/qml/SettingsPage.qml" line="96"/>
         <source>Language (restart required):</source>
         <translation>言語 (再起動が必要):</translation>
     </message>
     <message>
-        <location filename="../res/qml/SettingsPage.qml" line="256"/>
+        <location filename="../res/qml/SettingsPage.qml" line="269"/>
         <source>ms</source>
         <translation>ms</translation>
     </message>
     <message>
-        <location filename="../res/qml/SettingsPage.qml" line="188"/>
+        <location filename="../res/qml/SettingsPage.qml" line="201"/>
         <source>Select</source>
         <translation>選択</translation>
     </message>
     <message>
-        <location filename="../res/qml/SettingsPage.qml" line="307"/>
+        <location filename="../res/qml/SettingsPage.qml" line="320"/>
         <source>Shutdown OVRAS</source>
         <translation>OVRAS をシャットダウンする</translation>
     </message>
     <message>
-        <location filename="../res/qml/SettingsPage.qml" line="127"/>
+        <location filename="../res/qml/SettingsPage.qml" line="140"/>
         <source>Universe-Centered Rotation (Disables HMD Centering)</source>
         <translation>トラッキング空間中心の回転（HMD センタリングを無効化）</translation>
     </message>
@@ -1983,18 +1988,18 @@
 <context>
     <name>advsettings::OverlayController</name>
     <message>
-        <location filename="../overlaycontroller.cpp" line="429"/>
+        <location filename="../overlaycontroller.cpp" line="477"/>
         <source>Another instance is already running.</source>
         <translation>別のインスタンスがすでに実行されています。</translation>
     </message>
     <message>
-        <location filename="../overlaycontroller.cpp" line="152"/>
+        <location filename="../overlaycontroller.cpp" line="153"/>
         <source>Is OpenVR running?</source>
         <translation>OpenVR は実行されていますか?</translation>
     </message>
     <message>
-        <location filename="../overlaycontroller.cpp" line="151"/>
-        <location filename="../overlaycontroller.cpp" line="428"/>
+        <location filename="../overlaycontroller.cpp" line="152"/>
+        <location filename="../overlaycontroller.cpp" line="476"/>
         <source>OpenVR Advanced Settings Overlay</source>
         <translation>OpenVR 詳細設定オーバーレイ</translation>
     </message>
