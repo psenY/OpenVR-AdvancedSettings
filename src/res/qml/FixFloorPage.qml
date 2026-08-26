@@ -6,7 +6,7 @@ import "common"
 
 
 MyStackViewPage {
-    headerText: "Space Fix"
+    headerText: qsTr("Space Fix")
 
     content: ColumnLayout {
         spacing: 18
@@ -17,7 +17,7 @@ MyStackViewPage {
         }
 
         MyText {
-            text: "Place one controller on the ground and ensure good visibility to the base stations."
+            text: qsTr("Place one controller on the ground and ensure good visibility to the base stations.")
             wrapMode: Text.WordWrap
             font.pointSize: 28
             horizontalAlignment: Text.AlignHCenter
@@ -26,7 +26,7 @@ MyStackViewPage {
         }
 
         MyText {
-            text: "(Disabled in 'Seated' Universe Type)"
+            text: qsTr("(Disabled in 'Seated' Universe Type)")
             id: seatedWarningText
             visible: false
             wrapMode: Text.WordWrap
@@ -44,7 +44,7 @@ MyStackViewPage {
         MyText {
             id: statusMessageText
             enabled: false
-            text: "Status Text"
+            text: qsTr("Status Text")
             horizontalAlignment: Text.AlignHCenter
             verticalAlignment: Text.AlignVCenter
             Layout.fillWidth: true
@@ -58,7 +58,7 @@ MyStackViewPage {
         MyPushButton {
             id: fixButton
             Layout.fillWidth: true
-            text: "Fix Floor"
+            text: qsTr("Fix Floor")
             Layout.preferredHeight: 80
             onClicked: {
                 FixFloorTabController.fixFloorClicked()
@@ -68,7 +68,7 @@ MyStackViewPage {
 		MyPushButton {
             id: recenterButton
             Layout.fillWidth: true
-            text: "Recenter Space"
+            text: qsTr("Recenter Space")
             Layout.preferredHeight: 80
             onClicked: {
                 FixFloorTabController.recenterClicked()
@@ -81,7 +81,7 @@ MyStackViewPage {
             // TODO re-enable undo and remove visible: false
             visible: false
             Layout.fillWidth: true
-            text: "Undo Fix"
+            text: qsTr("Undo Fix")
             onClicked: {
                 FixFloorTabController.undoFixFloorClicked()
             }
@@ -90,7 +90,7 @@ MyStackViewPage {
         MyPushButton {
             id: zeroSpaceButton
             Layout.fillWidth: true
-            text: "Apply Space Settings Offsets as Center"
+            text: qsTr("Apply Space Settings Offsets as Center")
             Layout.preferredHeight: 80
             onClicked: {
                 MoveCenterTabController.addCurOffsetAsCenter()
@@ -104,7 +104,7 @@ MyStackViewPage {
         MyPushButton {
             id: revertButton
             Layout.fillWidth: true
-            text: "Revert All Changes from This Session"
+            text: qsTr("Revert All Changes from This Session")
             Layout.preferredHeight: 80
             onClicked: {
                 ChaperoneTabController.applyAutosavedProfile()

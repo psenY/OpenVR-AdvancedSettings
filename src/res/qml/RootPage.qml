@@ -12,7 +12,7 @@ MyStackViewPage {
     id: rootPage
     width: 1200
     height: 800
-    headerText: "OVR Advanced Settings"
+    headerText: qsTr("OVR Advanced Settings")
     headerShowBackButton: false
     stackView: mainView
     content: Item {
@@ -30,7 +30,7 @@ MyStackViewPage {
                        id: steamVRButton
                        iconPath: "qrc:/main_menu_icons/steamvr_tab_icon"
                        activationSoundEnabled: false
-                       text: "   SteamVR"
+                       text: qsTr("   SteamVR")
                        Layout.fillWidth: true
                        onClicked: {
                            MyResources.playFocusChangedSound()
@@ -42,7 +42,7 @@ MyStackViewPage {
                        id: chaperoneButton
                        iconPath: "qrc:/main_menu_icons/chaperone_tab_icon"
                        activationSoundEnabled: false
-                       text: "   Chaperone"
+                       text: qsTr("   Chaperone")
                        Layout.fillWidth: true
                        onClicked: {
                            MyResources.playFocusChangedSound()
@@ -54,7 +54,7 @@ MyStackViewPage {
                        id: playSpaceButton
                        iconPath: "qrc:/main_menu_icons/offsets_tab_icon"
                        activationSoundEnabled: false
-                       text: "   Offsets"
+                       text: qsTr("   Offsets")
                        Layout.fillWidth: true
                        onClicked: {
                            MyResources.playFocusChangedSound()
@@ -66,7 +66,7 @@ MyStackViewPage {
                        id: motionButton
                        iconPath: "qrc:/main_menu_icons/motion_tab_icon"
                        activationSoundEnabled: false
-                       text: "   Motion"
+                       text: qsTr("   Motion")
                        Layout.fillWidth: true
                        onClicked: {
                            MyResources.playFocusChangedSound()
@@ -77,7 +77,7 @@ MyStackViewPage {
                        id: rotationButton
                        iconPath: "qrc:/main_menu_icons/rotation_tab_icon"
                        activationSoundEnabled: false
-                       text: "   Rotation"
+                       text: qsTr("   Rotation")
                        Layout.fillWidth: true
                        onClicked: {
                            MyResources.playFocusChangedSound()
@@ -89,7 +89,7 @@ MyStackViewPage {
                        id: fixFloorButton
                        iconPath: "qrc:/main_menu_icons/space_fix_tab_icon"
                        activationSoundEnabled: false
-                       text: "   Space Fix"
+                       text: qsTr("   Space Fix")
                        Layout.fillWidth: true
                        onClicked: {
                            MyResources.playFocusChangedSound()
@@ -101,7 +101,7 @@ MyStackViewPage {
                        id: audioButton
                        iconPath: "qrc:/main_menu_icons/audio_tab_icon"
                        activationSoundEnabled: false
-                       text: "   Audio"
+                       text: qsTr("   Audio")
                        Layout.fillWidth: true
                        onClicked: {
                            MyResources.playFocusChangedSound()
@@ -113,7 +113,7 @@ MyStackViewPage {
                        id: videoButton
                        iconPath: "qrc:/main_menu_icons/video_tab_icon"
                        activationSoundEnabled: false
-                       text: "   Video"
+                       text: qsTr("   Video")
                        Layout.fillWidth: true
                        onClicked: {
                            MyResources.playFocusChangedSound()
@@ -125,7 +125,7 @@ MyStackViewPage {
                        id: utilitiesButton
                        iconPath: "qrc:/main_menu_icons/utilities_tab_icon"
                        activationSoundEnabled: false
-                       text: "   Utilities"
+                       text: qsTr("   Utilities")
                        Layout.fillWidth: true
                        onClicked: {
                            MyResources.playFocusChangedSound()
@@ -138,7 +138,7 @@ MyStackViewPage {
                        id: statisticsButton
                        iconPath: "qrc:/main_menu_icons/statistics_tab_icon"
                        activationSoundEnabled: false
-                       text: "   Statistics"
+                       text: qsTr("   Statistics")
                        Layout.fillWidth: true
                        onClicked: {
                            MyResources.playFocusChangedSound()
@@ -155,7 +155,7 @@ MyStackViewPage {
                        id: bindingsButton
                        iconPath: "qrc:/main_menu_icons/bindings_tab_icon"
                        activationSoundEnabled: false
-                       text: "   Bindings"
+                       text: qsTr("   Bindings")
                        Layout.fillWidth: true
                        onClicked: {
                             SteamVRTabController.launchBindingUI()
@@ -166,7 +166,7 @@ MyStackViewPage {
                        id: settingsButton
                        iconPath: "qrc:/main_menu_icons/settings_tab_icon"
                        activationSoundEnabled: false
-                       text: "   Settings"
+                       text: qsTr("   Settings")
                        Layout.fillWidth: true
                        onClicked: {
                            MyResources.playFocusChangedSound()
@@ -186,7 +186,7 @@ MyStackViewPage {
                        spacing: 18
 
                        MyText {
-                           text: "Video Profile:"
+                           text: qsTr("Video Profile:")
                        }
                        Item{
                           Layout.fillWidth: true
@@ -211,7 +211,7 @@ MyStackViewPage {
                            id: summaryVideoProfileApplyButton
                            enabled: false
                            Layout.preferredWidth: 150
-                           text: "Apply"
+                           text: qsTr("Apply")
                            onClicked: {
                                if (summaryVideoProfileComboBox.currentIndex > 0) {
                                    VideoTabController.applyVideoProfile(summaryVideoProfileComboBox.currentIndex - 1)
@@ -225,7 +225,7 @@ MyStackViewPage {
                        spacing: 18
 
                        MyText {
-                           text: "Chaperone Profile:"
+                           text: qsTr("Chaperone Profile:")
                        }
 
                        MyComboBox {
@@ -249,7 +249,7 @@ MyStackViewPage {
                            id: summaryChaperoneProfileApplyButton
                            enabled: false
                            Layout.preferredWidth: 150
-                           text: "Apply"
+                           text: qsTr("Apply")
                            onClicked: {
                                if (summaryChaperoneProfileComboBox.currentIndex > 0) {
                                    ChaperoneTabController.applyChaperoneProfile(summaryChaperoneProfileComboBox.currentIndex - 1)
@@ -266,19 +266,19 @@ MyStackViewPage {
 
                    RowLayout {
                        MyText {
-                           text: "Tracking Universe:"
+                           text: qsTr("Tracking Universe:")
                        }
                        MyText {
                            id: summaryPlaySpaceModeText
                            Layout.fillWidth: true
                            horizontalAlignment: Text.AlignRight
-                           text: "Unknown"
+                           text: qsTr("Unknown")
                        }
                    }
 
                    RowLayout {
                        MyText {
-                           text: "HMD Rotations:"
+                           text: qsTr("HMD Rotations:")
                        }
                        MyText {
                            id: summaryHmdRotationsText
@@ -295,7 +295,7 @@ MyStackViewPage {
 
                    RowLayout {
                        MyText {
-                           text: "Dropped Frames:"
+                           text: qsTr("Dropped Frames:")
                        }
                        MyText {
                            id: summaryDroppedFramesText
@@ -307,7 +307,7 @@ MyStackViewPage {
 
                    RowLayout {
                        MyText {
-                           text: "Reprojected Frames:"
+                           text: qsTr("Reprojected Frames:")
                        }
                        MyText {
                            id: summaryReprojectedFramesText
@@ -319,7 +319,7 @@ MyStackViewPage {
 
                    RowLayout {
                        MyText {
-                           text: "Timed Out:"
+                           text: qsTr("Timed Out:")
                        }
                        MyText {
                            id: summaryTimedOutText
@@ -331,7 +331,7 @@ MyStackViewPage {
 
                    RowLayout {
                        MyText {
-                           text: "Reprojection Ratio:"
+                           text: qsTr("Reprojection Ratio:")
                        }
                        MyText {
                            id: summaryTotalRatioText
@@ -350,7 +350,7 @@ MyStackViewPage {
 
                    RowLayout {
                        MyText {
-                           text: "Microphone:"
+                           text: qsTr("Microphone:")
                        }
                        MySlider {
                            id: summaryMicVolumeSlider
@@ -392,7 +392,7 @@ MyStackViewPage {
                    RowLayout {
                        MyToggleButton {
                            id: summaryPttToggle
-                           text: "Push-to-Talk"
+                           text: qsTr("Push-to-Talk")
                            onClicked: {
                                 AudioTabController.setPttEnabled(checked, true)
                            }
@@ -429,7 +429,7 @@ MyStackViewPage {
 
                        MyText {
                            id: summaryVersionText
-                           text: "v0.0.0"
+                           text: qsTr("v0.0.0")
                            font.pointSize: 16
                            horizontalAlignment: Text.AlignRight
                        }
@@ -456,11 +456,11 @@ MyStackViewPage {
 
 
        if (MoveCenterTabController.trackingUniverse === 0) {
-           summaryPlaySpaceModeText.text = "Sitting"
+           summaryPlaySpaceModeText.text = qsTr("Sitting")
        } else if (MoveCenterTabController.trackingUniverse === 1) {
-           summaryPlaySpaceModeText.text = "Standing"
+           summaryPlaySpaceModeText.text = qsTr("Standing")
        } else {
-           summaryPlaySpaceModeText.text = "Unknown(" + MoveCenterTabController.trackingUniverse + ")"
+           summaryPlaySpaceModeText.text = qsTr("Unknown (%1)").arg(MoveCenterTabController.trackingUniverse)
        }
        updateStatistics()
        if (visible) {
@@ -532,11 +532,11 @@ MyStackViewPage {
        target: MoveCenterTabController
        onTrackingUniverseChanged: {
            if (MoveCenterTabController.trackingUniverse === 0) {
-               summaryPlaySpaceModeText.text = "Sitting"
+               summaryPlaySpaceModeText.text = qsTr("Sitting")
            } else if (MoveCenterTabController.trackingUniverse === 1) {
-               summaryPlaySpaceModeText.text = "Standing"
+               summaryPlaySpaceModeText.text = qsTr("Standing")
            } else {
-               summaryPlaySpaceModeText.text = "Unknown(" + MoveCenterTabController.trackingUniverse + ")"
+               summaryPlaySpaceModeText.text = qsTr("Unknown (%1)").arg(MoveCenterTabController.trackingUniverse)
            }
        }
    }
@@ -545,9 +545,9 @@ MyStackViewPage {
    function updateStatistics() {
        var rotations = StatisticsTabController.hmdRotations
        if (rotations > 0) {
-           summaryHmdRotationsText.text = rotations.toFixed(2) + " CCW"
+           summaryHmdRotationsText.text = qsTr("%1 CCW").arg(rotations.toFixed(2))
        } else {
-           summaryHmdRotationsText.text = -rotations.toFixed(2) + " CW"
+           summaryHmdRotationsText.text = qsTr("%1 CW").arg((-rotations).toFixed(2))
        }
        summaryDroppedFramesText.text = StatisticsTabController.droppedFrames
        summaryReprojectedFramesText.text = StatisticsTabController.reprojectedFrames

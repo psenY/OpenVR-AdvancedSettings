@@ -11,8 +11,8 @@ MyDialogOkCancelPopup {
     y: -200
     x: 0
     property int profileIndex: -1
-    dialogTitle: "Delete Profile"
-    dialogText: "Do you really want to delete this video profile?"
+    dialogTitle: qsTr("Delete Profile")
+    dialogText: qsTr("Do you really want to delete this video profile?")
     onClosed: {
         if (okClicked) {
             VideoTabController.deleteVideoProfile(profileIndex)

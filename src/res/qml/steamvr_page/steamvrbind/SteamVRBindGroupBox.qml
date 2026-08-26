@@ -11,7 +11,7 @@ GroupBox {
     label:
         MyText {
         leftPadding: 10
-        text: "Binds:"
+        text: qsTr("Binds:")
         bottomPadding: -10
         }
 
@@ -37,7 +37,7 @@ GroupBox {
 
             MyToggleButton {
                 id: steamvrBindingToggle
-                text: "Enable Per-App"
+                text: qsTr("Enable Per-App")
                 Layout.preferredWidth: 250
                 onCheckedChanged: {
                     SteamVRTabController.setPerAppBindEnabled(this.checked, false)
@@ -58,7 +58,7 @@ GroupBox {
             }
 
             MyText {
-                text: "Application: "
+                text: qsTr("Application: ")
                 Layout.preferredWidth: 150
                 horizontalAlignment: Text.AlignRight
                 Layout.rightMargin: 2
@@ -66,7 +66,7 @@ GroupBox {
             MyTextField {
                 id: appSelect
                 Layout.fillWidth: true
-                text: "steam.overlay.1009850"
+                text: qsTr("steam.overlay.1009850")
                 keyBoardUID: 201
                 Layout.leftMargin: 10
                 Layout.rightMargin: 10
@@ -78,7 +78,7 @@ GroupBox {
             MyPushButton {
                 id: bindingsButton
                 activationSoundEnabled: false
-                text: "Open Bindings"
+                text: qsTr("Open Bindings")
                 Layout.preferredWidth: 180
                 onClicked: {
                      SteamVRTabController.launchBindingUI()
@@ -88,14 +88,14 @@ GroupBox {
         RowLayout {
             spacing: 16
             MyText {
-                text: "Save Current Binding of Selected App: "
+                text: qsTr("Save Current Binding of Selected App: ")
                 Layout.preferredWidth: 500
                 horizontalAlignment: Text.AlignLeft
                 Layout.rightMargin: 2
             }
             MyPushButton {
                     id: setBinding
-                    text:"For Current Game"
+                    text:qsTr("For Current Game")
                     onClicked: {
                         SteamVRTabController.setBindingQMLWrapper(appSelect.text)
                     }
@@ -106,7 +106,7 @@ GroupBox {
             }
             MyPushButton {
                     id: setDefaultBtn
-                    text:"As Default"
+                    text:qsTr("As Default")
                     onClicked: {
                         SteamVRTabController.setBindingQMLWrapper(appSelect.text,true)
                     }

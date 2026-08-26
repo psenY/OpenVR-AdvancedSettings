@@ -10,7 +10,7 @@ GroupBox {
 
     label: MyText {
         leftPadding: 10
-        text: "Auto-Turn (for discrete redirected walking)"
+        text: qsTr("Auto-Turn (for discrete redirected walking)")
         bottomPadding: -12
     }
     background: Rectangle {
@@ -34,14 +34,14 @@ GroupBox {
 
             MyToggleButton {
                 id: autoTurn
-                text: "Toggle On/Off"
+                text: qsTr("Toggle On/Off")
                 Layout.preferredWidth: 250
                 onCheckedChanged: {
                     RotationTabController.setAutoTurnEnabled(this.checked, true);                }
             }
             MyToggleButton {
                 id: autoTurnNotificationToggle
-                text: "HMD Icon"
+                text: qsTr("HMD Icon")
                 Layout.preferredWidth: 175
                 onCheckedChanged: {
                 RotationTabController.setAutoTurnShowNotification(this.checked, true)
@@ -49,7 +49,7 @@ GroupBox {
             }
 
             MyText {
-                text: "Activation Dist:"
+                text: qsTr("Activation Dist:")
                 horizontalAlignment: Text.AlignRight
                 Layout.rightMargin: 10
                 Layout.preferredWidth: 215
@@ -98,7 +98,7 @@ GroupBox {
 
             MyToggleButton {
                 id: cornerAngle
-                text: "Use Corner Angle"
+                text: qsTr("Use Corner Angle")
                 Layout.preferredWidth: 300
                 onCheckedChanged: {
                     RotationTabController.setAutoTurnUseCornerAngle(this.checked, true);
@@ -106,7 +106,7 @@ GroupBox {
             }
 
             MyText {
-                text: "Deactivation Dist:"
+                text: qsTr("Deactivation Dist:")
                 horizontalAlignment: Text.AlignRight
                 Layout.rightMargin: 10
                 Layout.preferredWidth: 215
@@ -154,7 +154,7 @@ GroupBox {
         RowLayout {
             MyToggleButton {
                 id: autoTurnModeToggle
-                text: "Use Smooth Turn"
+                text: qsTr("Use Smooth Turn")
                 Layout.preferredWidth: 300
                 onCheckedChanged: {
                     if(this.checked){
@@ -168,7 +168,7 @@ GroupBox {
             }
 
             MyText {
-                text: "Turn Speed(deg/sec):"
+                text: qsTr("Turn Speed(deg/sec):")
                 horizontalAlignment: Text.AlignRight
                 Layout.rightMargin: 10
             }
@@ -220,14 +220,14 @@ GroupBox {
       RowLayout{
 
           MyText{
-              text: "Detangle Angle: "
+              text: qsTr("Detangle Angle: ")
               horizontalAlignment: Text.AlignLeft
               Layout.preferredWidth: 200
               Layout.rightMargin: 5
 
           }
           MyText{
-              text:"Min Rotations:"
+              text:qsTr("Min Rotations:")
               Layout.rightMargin: 5
 
           }
@@ -257,7 +257,7 @@ GroupBox {
           }
 
           MyText{
-              text: "Max Wall Angle: "
+              text: qsTr("Max Wall Angle: ")
               horizontalAlignment: Text.AlignRight
               Layout.rightMargin: 10
               Layout.fillWidth: true

@@ -10,7 +10,7 @@ import "profiles"
 
 MyStackViewPage {
     width: 1200
-    headerText: "Audio Settings"
+    headerText: qsTr("Audio Settings")
 
     content: ColumnLayout {
         spacing: 24

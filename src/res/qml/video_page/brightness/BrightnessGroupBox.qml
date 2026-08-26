@@ -10,7 +10,7 @@ GroupBox {
 
     label: MyText {
         leftPadding: 10
-        text: "Brightness"
+        text: qsTr("Brightness")
         bottomPadding: -10
     }
     background: Rectangle {
@@ -34,7 +34,7 @@ GroupBox {
 
             MyToggleButton {
                 id: brightnessToggle
-                text: "Toggle On/Off"
+                text: qsTr("Toggle On/Off")
                 onCheckedChanged: {
                     VideoTabController.setBrightnessEnabled(this.checked, true)                }
             }
@@ -44,7 +44,7 @@ GroupBox {
             }
 
             MyText {
-                text: "Brightness:"
+                text: qsTr("Brightness:")
                 horizontalAlignment: Text.AlignRight
                 Layout.rightMargin: 10
             }

@@ -10,7 +10,7 @@ GroupBox {
 
     label: MyText {
         leftPadding: 10
-        text: "Misc:"
+        text: qsTr("Misc:")
         bottomPadding: -10
     }
     background: Rectangle {
@@ -34,7 +34,7 @@ GroupBox {
 
             MyToggleButton {
                 id: videoMotionSmoothingToggle
-                text: "Motion Smoothing"
+                text: qsTr("Motion Smoothing")
                 onCheckedChanged: {
                        VideoTabController.setMotionSmoothing(this.checked, false)
                 }
@@ -45,7 +45,7 @@ GroupBox {
 
             MyToggleButton {
                 id: videoAllowSupersampleFilteringToggle
-                text: "Advanced SS Filtering"
+                text: qsTr("Advanced SS Filtering")
                 onCheckedChanged: {
                     VideoTabController.setAllowSupersampleFiltering(this.checked, false)
                 }
@@ -56,7 +56,7 @@ GroupBox {
 
             MyToggleButton {
                 id: videoUseOverlayToggle
-                text: "Use Overlay For Color"
+                text: qsTr("Use Overlay For Color")
                 onCheckedChanged: {
                     VideoTabController.setIsOverlayMethodActive(this.checked, true)
                 }

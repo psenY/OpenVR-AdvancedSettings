@@ -12,7 +12,7 @@ Rectangle {
 
     property StackView stackView
 
-    property string headerText: "Header Title"
+    property string headerText: qsTr("Header Title")
 
     property bool headerShowBackButton: true
 
@@ -67,7 +67,7 @@ Rectangle {
 
     property Item content: Frame {
         MyText {
-            text: "Content"
+            text: qsTr("Content")
         }
     }
 

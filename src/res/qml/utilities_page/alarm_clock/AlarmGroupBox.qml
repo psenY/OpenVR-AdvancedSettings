@@ -10,7 +10,7 @@ GroupBox {
     
     label: MyText {
         leftPadding: 10
-        text: "Alarm Clock"
+        text: qsTr("Alarm Clock")
         bottomPadding: -10
     }
     background: Rectangle {
@@ -30,7 +30,7 @@ GroupBox {
             RowLayout {
                 MyToggleButton {
                     id: alarmClockToggle
-                    text: "Alarm"
+                    text: qsTr("Alarm")
 
                     Layout.preferredWidth: parent.parent.parent.activationButtonWidth
                     onCheckedChanged: {
@@ -51,7 +51,7 @@ GroupBox {
 
                 MyPushButton2 {
                     Layout.preferredWidth: 170
-                    text: "Current Time"
+                    text: qsTr("Current Time")
                     onClicked: {
                         VrAlarm.setAlarmTimeToCurrentTime()
                         alarmClockTimeAssembly.changeTimer(VrAlarm.getAlarmHour(),
@@ -62,7 +62,7 @@ GroupBox {
 
                 MyPushButton2 {
                     Layout.preferredWidth: 120
-                    text: "+1 Hour"
+                    text: qsTr("+1 Hour")
                     onClicked: {
                         VrAlarm.modAlarmTime(1, 0, 0)
                     }
@@ -70,14 +70,14 @@ GroupBox {
 
                 MyPushButton2 {
                     Layout.preferredWidth: 120
-                    text: "-1 Hour"
+                    text: qsTr("-1 Hour")
                     onClicked: {
                         VrAlarm.modAlarmTime(-1, 0, 0)
                     }
                 }
 
                 MyPushButton2 {
-                    text: "+5 Min"
+                    text: qsTr("+5 Min")
                     Layout.preferredWidth: 110
                     onClicked: {
                         VrAlarm.modAlarmTime(0, 5, 0)
@@ -86,7 +86,7 @@ GroupBox {
 
                 MyPushButton2 {
                     Layout.preferredWidth: 110
-                    text: "-5 Min"
+                    text: qsTr("-5 Min")
                     onClicked: {
                         VrAlarm.modAlarmTime(0, -5, 0)
                     }

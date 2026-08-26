@@ -29,7 +29,7 @@ GroupBox {
     label: MyText {
         id: headerText
         leftPadding: 10
-        text: "MISSING HEADER TEXT"
+        text: qsTr("MISSING HEADER TEXT")
         bottomPadding: -10
     }
     background: Rectangle {

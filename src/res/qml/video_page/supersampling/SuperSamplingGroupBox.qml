@@ -10,7 +10,7 @@ GroupBox {
 
     label: MyText {
         leftPadding: 10
-        text: "SuperSampling: (may require refresh of dashboard or restart of SteamVR)"
+        text: qsTr("SuperSampling: (may require refresh of dashboard or restart of SteamVR)")
         bottomPadding: -10
     }
     background: Rectangle {
@@ -34,7 +34,7 @@ GroupBox {
 
             MyToggleButton {
                 id: videoAllowSupersampleOverrideToggle
-                text: "Toggle Override"
+                text: qsTr("Toggle Override")
                 onCheckedChanged: {
                     VideoTabController.setAllowSupersampleOverride(this.checked, false)
                     VideoTabController.setSuperSampling(videoSupersamplingSlider.value, true)

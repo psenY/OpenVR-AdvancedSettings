@@ -19,7 +19,7 @@ MyStackViewPage {
             DT: "Dongle Type"
         }
     }
-    headerText: "Device Pairing Information"
+    headerText: qsTr("Device Pairing Information")
     content:
         ColumnLayout {
                 spacing: 10
@@ -27,19 +27,19 @@ MyStackViewPage {
                 Layout.fillHeight: true
                 RowLayout{
                     MyText{
-                        text: "Status: "
+                        text: qsTr("Status: ")
                         Layout.preferredWidth: 200
                     }
                     MyText{
                         id: statusText
-                        text: "Ready to Pair"
+                        text: qsTr("Ready to Pair")
                         Layout.fillWidth: true
                     }
                 }
 
                 RowLayout{
                     MyText{
-                        text: "dongles used: "
+                        text: qsTr("dongles used: ")
                         Layout.preferredWidth: 200
                     }
                     MyText{
@@ -53,7 +53,7 @@ MyStackViewPage {
                     }
                     MyPushButton{
                         Layout.preferredWidth: 250
-                        text: "Refresh Device List"
+                        text: qsTr("Refresh Device List")
                         id: searchButton
                         onClicked: {
                             getRXTX()
@@ -62,7 +62,7 @@ MyStackViewPage {
                 }
                 RowLayout{
                     MyText{
-                        text: "Instructions: Set Device to pairing mode and then hit pair on desired un-connected Dongle. To pair to a currently used dongle turn-off the attached device and refresh the list"
+                        text: qsTr("Instructions: Set Device to pairing mode and then hit pair on desired un-connected Dongle. To pair to a currently used dongle turn-off the attached device and refresh the list")
                         Layout.fillWidth: true
                         wrapMode: Text.WordWrap
                     }
@@ -91,12 +91,12 @@ MyStackViewPage {
                                 label: RowLayout{
                                     MyText {
                                         leftPadding: 10
-                                        text: "Device: "
+                                        text: qsTr("Device: ")
                                         bottomPadding: -10
                                     }
                                     MyText {
                                         leftPadding: 10
-                                        text: Dev
+                                        text: Dev === "No Connection" ? qsTr("No Connection") : Dev
                                         bottomPadding: -10
                                     }
                                 }
@@ -120,7 +120,7 @@ MyStackViewPage {
                                         clip: true
                                         MyText{
                                             Layout.preferredWidth: 150
-                                            text: "Device ID: "
+                                            text: qsTr("Device ID: ")
                                         }
                                         MyText{
                                             Layout.preferredWidth: 250
@@ -132,7 +132,7 @@ MyStackViewPage {
                                         }
                                         MyText{
                                             Layout.preferredWidth: 300
-                                            text: "Connected Dongle Type: "
+                                            text: qsTr("Connected Dongle Type: ")
                                         }
                                         MyText{
                                             Layout.preferredWidth: 250
@@ -146,7 +146,7 @@ MyStackViewPage {
                                         clip: true
                                         MyPushButton{
                                             Layout.preferredWidth: 200
-                                            text: "Pair"
+                                            text: qsTr("Pair")
                                             id: pairBtn
                                             onClicked: {
                                                 SteamVRTabController.pairDevice(rxtext.text)
@@ -163,7 +163,7 @@ MyStackViewPage {
                                         }
                                         MyText{
                                             Layout.preferredWidth: 150
-                                            text: "Dongle ID: "
+                                            text: qsTr("Dongle ID: ")
                                         }
                                         MyText{
                                             Layout.preferredWidth: 250

@@ -7,11 +7,11 @@ import "." // QTBUG-34418, singletons require explicit import to load qmldir fil
 import "common"
 
 MyStackViewPage {
-    headerText: "Chaperone Proximity Warning Settings"
+    headerText: qsTr("Chaperone Proximity Warning Settings")
 
     ColorDialog {
         id: colorDialog
-        title: "Please choose a color"
+        title: qsTr("Please choose a color")
         onAccepted: {
             console.log("You chose: " + colorDialog.color)
             Qt.quit()
@@ -29,14 +29,14 @@ MyStackViewPage {
             spacing: 0
             MyToggleButton {
                 id: switchBeginnerToggle
-                text: "Switch to Beginner Mode"
+                text: qsTr("Switch to Beginner Mode")
                 onCheckedChanged: {
                     ChaperoneTabController.chaperoneSwitchToBeginnerEnabled = checked
                 }
             }
             RowLayout {
                 MyText {
-                    text: "Activation Distance: "
+                    text: qsTr("Activation Distance: ")
                     Layout.preferredWidth: 250
                 }
                 MyPushButton2 {
@@ -114,14 +114,14 @@ MyStackViewPage {
             spacing: 0
             MyToggleButton {
                 id: hapticFeedbackToggle
-                text: "Trigger Haptic Feedback"
+                text: qsTr("Trigger Haptic Feedback")
                 onCheckedChanged: {
                     ChaperoneTabController.chaperoneHapticFeedbackEnabled = checked
                 }
             }
             RowLayout {
                 MyText {
-                    text: "Activation Distance: "
+                    text: qsTr("Activation Distance: ")
                     Layout.preferredWidth: 250
                 }
                 MyPushButton2 {
@@ -201,14 +201,14 @@ MyStackViewPage {
                 spacing: 32
                 MyToggleButton {
                     id: audioWarningToggle
-                    text: "Audio Warning"
+                    text: qsTr("Audio Warning")
                     onCheckedChanged: {
                         ChaperoneTabController.chaperoneAlarmSoundEnabled = checked
                     }
                 }
                 MyToggleButton {
                     id: audioWarningLoopingToggle
-                    text: "Loop Audio"
+                    text: qsTr("Loop Audio")
                     onCheckedChanged: {
                         ChaperoneTabController.chaperoneAlarmSoundLooping = checked
                         audioWarningAdjustVolumeToggle.enabled = checked
@@ -216,7 +216,7 @@ MyStackViewPage {
                 }
                 MyToggleButton {
                     id: audioWarningAdjustVolumeToggle
-                    text: "Adjust Volume"
+                    text: qsTr("Adjust Volume")
                     enabled: false
                     onCheckedChanged: {
                         ChaperoneTabController.chaperoneAlarmSoundAdjustVolume = checked
@@ -225,7 +225,7 @@ MyStackViewPage {
             }
             RowLayout {
                 MyText {
-                    text: "Activation Distance: "
+                    text: qsTr("Activation Distance: ")
                     Layout.preferredWidth: 250
                 }
                 MyPushButton2 {
@@ -303,14 +303,14 @@ MyStackViewPage {
             spacing: 0
             MyToggleButton {
                 id: openDashboardToggle
-                text: "Open Dashboard"
+                text: qsTr("Open Dashboard")
                 onCheckedChanged: {
                     ChaperoneTabController.chaperoneShowDashboardEnabled = checked
                 }
             }
             RowLayout {
                 MyText {
-                    text: "Activation Distance: "
+                    text: qsTr("Activation Distance: ")
                     Layout.preferredWidth: 250
                 }
                 MyPushButton2 {

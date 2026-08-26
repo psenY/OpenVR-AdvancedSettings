@@ -16,7 +16,7 @@ RowLayout {
         }
     }
     MyText {
-        text: "h"
+        text: qsTr("h")
     }
 
     MinuteSecondComboBox {
@@ -29,7 +29,7 @@ RowLayout {
         }
     }
     MyText {
-        text: "m"
+        text: qsTr("m")
     }
 
     MinuteSecondComboBox {
@@ -42,7 +42,7 @@ RowLayout {
         }
     }
     MyText {
-        text: "s"
+        text: qsTr("s")
     }
     function changeTimer(hour, minute, second) {
         hourBox.currentIndex = hour

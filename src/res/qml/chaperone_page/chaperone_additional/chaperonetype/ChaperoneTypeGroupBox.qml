@@ -11,7 +11,7 @@ GroupBox {
 
     label: MyText {
         leftPadding: 10
-        text: "Chaperone Style"
+        text: qsTr("Chaperone Style")
         bottomPadding: -10
     }
     background: Rectangle {

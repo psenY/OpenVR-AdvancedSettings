@@ -11,7 +11,7 @@ GroupBox {
 
     label: MyText {
         leftPadding: 10
-        text: "Rotate Orientation (permanent)"
+        text: qsTr("Rotate Orientation (permanent)")
         bottomPadding: -10
     }
     background: Rectangle {
@@ -91,7 +91,7 @@ GroupBox {
                 MyPushButton {
                     id: spaceRotationApplyButton
                     Layout.preferredWidth: 145
-                    text:"Apply"
+                    text:qsTr("Apply")
                     onClicked: {
                         ChaperoneTabController.flipOrientation(spaceRotationSlider.value)
                         spaceRotationSlider.value = 0

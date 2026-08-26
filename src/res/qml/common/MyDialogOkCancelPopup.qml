@@ -69,7 +69,7 @@ Popup {
                     Layout.bottomMargin: 12
                     MyPushButton {
                         implicitWidth: 200
-                        text: "Ok"
+                        text: qsTr("Ok")
                         onClicked: {
                             okClicked = true
                             myDialogPopup.close()
@@ -80,7 +80,7 @@ Popup {
                     }
                     MyPushButton {
                         implicitWidth: 200
-                        text: "Cancel"
+                        text: qsTr("Cancel")
                         onClicked: {
                             okClicked = false
                             myDialogPopup.close()

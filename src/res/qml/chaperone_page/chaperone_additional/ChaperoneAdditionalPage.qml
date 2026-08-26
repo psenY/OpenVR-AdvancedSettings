@@ -10,7 +10,7 @@ import "chaperonetype"
 import "chaperonemisc"
 
 MyStackViewPage {
-    headerText: "Additional Chaperone Settings"
+    headerText: qsTr("Additional Chaperone Settings")
     content: ColumnLayout {
         spacing: 10
 
@@ -32,7 +32,7 @@ MyStackViewPage {
             columns: 5
 
             MyText {
-                text: "Disable chaperone below height: "
+                text: qsTr("Disable chaperone below height: ")
                 Layout.preferredWidth: 400
             }
             MyPushButton2 {

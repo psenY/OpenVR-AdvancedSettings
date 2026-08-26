@@ -10,7 +10,7 @@ GroupBox {
 
     label: MyText {
         leftPadding: 10
-        text: "Camera: (requires SteamVR restart)"
+        text: qsTr("Camera: (requires SteamVR restart)")
         bottomPadding: -10
     }
     background: Rectangle {
@@ -34,7 +34,7 @@ GroupBox {
 
             MyToggleButton {
                 id: steamvrCameraActiveToggle
-                text: "Enable Camera"
+                text: qsTr("Enable Camera")
                 Layout.preferredWidth: 400
                 onCheckedChanged: {
                        SteamVRTabController.setCameraActive(this.checked, false)
@@ -55,7 +55,7 @@ GroupBox {
 
             MyToggleButton {
                 id: steamvrCameraBoundsToggle
-                text: "Show camera on bounds collision"
+                text: qsTr("Show camera on bounds collision")
                 Layout.preferredWidth: 400
                 onCheckedChanged: {
                        SteamVRTabController.setCameraBounds(this.checked, false)
@@ -67,7 +67,7 @@ GroupBox {
 
             MyToggleButton {
                 id: steamvrCameraContToggle
-                text: "Show camera on controller"
+                text: qsTr("Show camera on controller")
                 onCheckedChanged: {
                     SteamVRTabController.setCameraCont(this.checked, false)
                 }

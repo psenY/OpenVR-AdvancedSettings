@@ -11,7 +11,7 @@ GroupBox {
 
     label: MyText {
         leftPadding: 10
-        text: "Chaperone Color"
+        text: qsTr("Chaperone Color")
         bottomPadding: -10
     }
     background: Rectangle {
@@ -33,7 +33,7 @@ GroupBox {
             RowLayout{
 
                 MyText {
-                    text: "Red:"
+                    text: qsTr("Red:")
                     horizontalAlignment: Text.AlignRight
                     Layout.preferredWidth: 75
                 }
@@ -78,7 +78,7 @@ GroupBox {
                     Layout.preferredWidth: 200
                 }
                 MyText {
-                    text: "Green:"
+                    text: qsTr("Green:")
                     horizontalAlignment: Text.AlignRight
                     Layout.preferredWidth: 75
                 }
@@ -122,7 +122,7 @@ GroupBox {
             }
             RowLayout{
                 MyText {
-                    text: "Blue:"
+                    text: qsTr("Blue:")
                     horizontalAlignment: Text.AlignRight
                     Layout.preferredWidth: 75
                 }

@@ -24,7 +24,7 @@ ColumnLayout {
 
         MyText {
             Layout.preferredWidth: 150
-            text: "Audio Profile:"
+            text: qsTr("Audio Profile:")
             visible: false
         }
 
@@ -50,7 +50,7 @@ ColumnLayout {
             enabled: false
             visible: false
             Layout.preferredWidth: 150
-            text: "Apply"
+            text: qsTr("Apply")
             onClicked: {
                 if (audioProfileComboBox.currentIndex > 0) {
                     AudioTabController.applyAudioProfile(
@@ -60,7 +60,7 @@ ColumnLayout {
         }
         MyText {
             // Text continues in next RowLayout.
-            text: "Change the Push To Talk settings"
+            text: qsTr("Change the Push To Talk settings")
         }
     }
     RowLayout {
@@ -71,7 +71,7 @@ ColumnLayout {
             enabled: false
             visible: false
             Layout.preferredWidth: 200
-            text: "Delete Profile"
+            text: qsTr("Delete Profile")
             onClicked: {
                 if (audioProfileComboBox.currentIndex > 0) {
                     audioDeleteProfileDialog.profileIndex = audioProfileComboBox.currentIndex - 1
@@ -83,14 +83,14 @@ ColumnLayout {
             enabled: false
             visible: false
             Layout.preferredWidth: 200
-            text: "New Profile"
+            text: qsTr("New Profile")
             onClicked: {
                 audioNewProfileDialog.openPopup()
             }
         }
         MyText {
             // Text continues from RowLayout above.
-            text: "\t\tin the SteamVR bindings menu."
+            text: qsTr("\t\tin the SteamVR bindings menu.")
         }
     }
     Component.onCompleted: {

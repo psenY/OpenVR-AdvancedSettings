@@ -9,7 +9,7 @@ import "steamvrbind"
 
 MyStackViewPage {
     width: 1200
-    headerText: "SteamVR"
+    headerText: qsTr("SteamVR")
 
     content: ColumnLayout {
         spacing: 16
@@ -28,7 +28,7 @@ MyStackViewPage {
             Layout.fillWidth: true
 
             MyPushButton {
-                text: "Device Pairing Information"
+                text: qsTr("Device Pairing Information")
                 Layout.preferredWidth: 350
 
                 onClicked: {
@@ -42,7 +42,7 @@ MyStackViewPage {
 
             MyPushButton {
                 id: steamVRRestartButton
-                text: "Restart SteamVR"
+                text: qsTr("Restart SteamVR")
                 Layout.preferredWidth: 250
                 onClicked: {
                     SteamVRTabController.restartSteamVR()

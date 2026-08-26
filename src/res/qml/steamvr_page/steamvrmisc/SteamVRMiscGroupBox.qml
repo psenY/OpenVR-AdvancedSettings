@@ -10,7 +10,7 @@ GroupBox {
 
     label: MyText {
         leftPadding: 10
-        text: "Misc:"
+        text: qsTr("Misc:")
         bottomPadding: -10
     }
     background: Rectangle {
@@ -34,7 +34,7 @@ GroupBox {
 
             MyToggleButton {
                 id: steamvrPerformanceGraphToggle
-                text: "Enable Timing Overlay"
+                text: qsTr("Enable Timing Overlay")
                 Layout.preferredWidth: 300
                 onCheckedChanged: {
                     SteamVRTabController.setPerformanceGraph(this.checked, false)
@@ -46,7 +46,7 @@ GroupBox {
             }
             MyToggleButton {
                 id: steamvrNoHMDToggle
-                text: "Require HMD"
+                text: qsTr("Require HMD")
                 Layout.preferredWidth: 300
                 onCheckedChanged: {
                     SteamVRTabController.setNoHMD(this.checked, false)
@@ -59,7 +59,7 @@ GroupBox {
             MyToggleButton {
                 id: steamvrNoFadeToGridToggle
                 Layout.fillWidth: true
-                text: "No Fade to Grid"
+                text: qsTr("No Fade to Grid")
                 onCheckedChanged: {
                     SteamVRTabController.setNoFadeToGrid(this.checked, false)
                 }
@@ -71,7 +71,7 @@ GroupBox {
             MyToggleButton {
                 id: steamvrMultipleDriverToggle
                 Layout.preferredWidth: 300
-                text: "Allow Multiple Drivers"
+                text: qsTr("Allow Multiple Drivers")
                 onCheckedChanged: {
                     SteamVRTabController.setMultipleDriver(this.checked, false)
                 }
@@ -83,7 +83,7 @@ GroupBox {
             MyToggleButton {
                 id: steamvrSystemButtonToggle
                 Layout.fillWidth: true
-                text: "Enable System Button Binding"
+                text: qsTr("Enable System Button Binding")
                 onCheckedChanged: {
                     SteamVRTabController.setSystemButton(this.checked, false)
                 }
@@ -96,7 +96,7 @@ GroupBox {
 
             MyToggleButton {
                 id: steamvrNotificationToggle
-                text: "Disable Notifications"
+                text: qsTr("Disable Notifications")
                  Layout.preferredWidth: 300
                 onCheckedChanged: {
                     SteamVRTabController.setDND(this.checked, false)
@@ -109,7 +109,7 @@ GroupBox {
             MyToggleButton {
                 id: steamvrControllerPowerToggle
                 Layout.fillWidth: true
-                text: "Controller Power Turns on SteamVR"
+                text: qsTr("Controller Power Turns on SteamVR")
                 onCheckedChanged: {
                     SteamVRTabController.setControllerPower(this.checked, false)
                 }

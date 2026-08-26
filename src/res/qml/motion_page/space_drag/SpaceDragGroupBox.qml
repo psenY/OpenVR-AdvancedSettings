@@ -10,7 +10,7 @@ GroupBox {
 
     label: MyText {
         leftPadding: 10
-        text: "Space Drag"
+        text: qsTr("Space Drag")
         bottomPadding: -10
     }
     background: Rectangle {
@@ -34,7 +34,7 @@ GroupBox {
 
             MyToggleButton {
                 id: moveShortcutLeft
-                text: "Left Hand"
+                text: qsTr("Left Hand")
                 onCheckedChanged: {
                     MoveCenterTabController.moveShortcutLeft = this.checked
                 }
@@ -42,7 +42,7 @@ GroupBox {
 
             MyToggleButton {
                 id: moveShortcutRight
-                text: "Right Hand"
+                text: qsTr("Right Hand")
                 onCheckedChanged: {
                     MoveCenterTabController.moveShortcutRight = this.checked
                 }
@@ -53,7 +53,7 @@ GroupBox {
             }
 
             MyText {
-                text: "Comfort Mode:"
+                text: qsTr("Comfort Mode:")
                 horizontalAlignment: Text.AlignRight
                 Layout.rightMargin: 10
             }
@@ -82,7 +82,7 @@ GroupBox {
 
             MyToggleButton {
                 id: dragBounds
-                text: "Force Bounds"
+                text: qsTr("Force Bounds")
                 onCheckedChanged: {
                     MoveCenterTabController.dragBounds = this.checked
                 }
@@ -95,7 +95,7 @@ GroupBox {
             }
 
             MyText {
-                text: "Drag Multiplier:"
+                text: qsTr("Drag Multiplier:")
                 horizontalAlignment: Text.AlignRight
                 Layout.rightMargin: 2
             }
@@ -121,7 +121,7 @@ GroupBox {
 
             MyPushButton2 {
                 Layout.preferredWidth: 50
-                text: "1x"
+                text: qsTr("1x")
                 onClicked: {
                     MoveCenterTabController.dragMult = 1.0
                 }
@@ -129,7 +129,7 @@ GroupBox {
 
             MyPushButton2 {
                 Layout.preferredWidth: 50
-                text: "2x"
+                text: qsTr("2x")
                 onClicked: {
                     MoveCenterTabController.dragMult = 2.0
                 }
@@ -137,7 +137,7 @@ GroupBox {
 
             MyPushButton2 {
                 Layout.preferredWidth: 50
-                text: "3x"
+                text: qsTr("3x")
                 onClicked: {
                     MoveCenterTabController.dragMult = 3.0
                 }

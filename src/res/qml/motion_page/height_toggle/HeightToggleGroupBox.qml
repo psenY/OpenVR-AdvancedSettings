@@ -10,7 +10,7 @@ GroupBox {
 
     label: MyText {
         leftPadding: 10
-        text: "Height Toggle / Gravity Floor Offset"
+        text: qsTr("Height Toggle / Gravity Floor Offset")
         bottomPadding: -10
     }
     background: Rectangle {
@@ -34,7 +34,7 @@ GroupBox {
 
             MyToggleButton {
                 id: heightToggleButton
-                text: "On"
+                text: qsTr("On")
                 onCheckedChanged: {
                     MoveCenterTabController.heightToggle = this.checked
                 }
@@ -45,7 +45,7 @@ GroupBox {
             }
 
             MyText {
-                text: "Height Offset (+ is down):"
+                text: qsTr("Height Offset (+ is down):")
                 horizontalAlignment: Text.AlignRight
                 Layout.rightMargin: 2
             }
@@ -72,7 +72,7 @@ GroupBox {
             MyPushButton {
                 id: heightOffsetFromYOffsetButton
                 Layout.preferredWidth: 230
-                text:"Set From Y-Offset"
+                text:qsTr("Set From Y-Offset")
                 onClicked: {
                     MoveCenterTabController.heightToggleOffset = MoveCenterTabController.offsetY
                 }

@@ -6,7 +6,7 @@ import "../../common"
 
 RowLayout {
     id: audioMicNameCombo
-    property string deviceText: "Microphone: "
+    property string deviceText: qsTr("Microphone: ")
 
     // The entries in the dropdown box.
     property alias devices: selector.model
@@ -20,7 +20,7 @@ RowLayout {
     MyToggleButton {
         id: recordingOverrideToggle
         Layout.preferredWidth: 250
-        text: "Toggle Override"
+        text: qsTr("Toggle Override")
         onClicked: {
             AudioTabController.setRecordingOverride(this.checked, false)
         }

@@ -6,7 +6,7 @@ import "common"
 
 
 MyStackViewPage {
-    headerText: "Space Offsets"
+    headerText: qsTr("Space Offsets")
 
     MyDialogOkPopup {
         id: offsetMessageDialog
@@ -20,8 +20,8 @@ MyStackViewPage {
     MyDialogOkCancelPopup {
         id: offsetDeleteProfileDialog
         property int profileIndex: -1
-        dialogTitle: "Delete Profile"
-        dialogText: "Do you really want to delete this profile?"
+        dialogTitle: qsTr("Delete Profile")
+        dialogText: qsTr("Do you really want to delete this profile?")
         onClosed: {
             if (okClicked) {
                 MoveCenterTabController.deleteOffsetProfile(profileIndex)
@@ -31,7 +31,7 @@ MyStackViewPage {
 
     MyDialogOkCancelPopup {
         id: offsetNewProfileDialog
-        dialogTitle: "Create New Profile"
+        dialogTitle: qsTr("Create New Profile")
         dialogWidth: 800
         dialogHeight: 400
         dialogContentItem: ColumnLayout {
@@ -40,7 +40,7 @@ MyStackViewPage {
                 Layout.leftMargin: 16
                 Layout.rightMargin: 16
                 MyText {
-                    text: "Name: "
+                    text: qsTr("Name: ")
                 }
                 MyTextField {
                     id: offsetNewProfileName
@@ -58,7 +58,7 @@ MyStackViewPage {
         onClosed: {
             if (okClicked) {
                 if (offsetNewProfileName.text == "") {
-                    offsetMessageDialog.showMessage("Create New Profile", "ERROR: Empty profile name.")
+                    offsetMessageDialog.showMessage(qsTr("Create New Profile"), qsTr("ERROR: Empty profile name."))
                 } else {
                     MoveCenterTabController.addOffsetProfile(offsetNewProfileName.text)
                 }
@@ -76,13 +76,13 @@ MyStackViewPage {
 
         RowLayout {
             MyText {
-                text: "Tracking Universe:"
+                text: qsTr("Tracking Universe:")
                 Layout.preferredWidth: 230
             }
             MyText {
                 id: spaceModeText
                 font.bold: true
-                text: "Standing"
+                text: qsTr("Standing")
             }
         }
 
@@ -94,7 +94,7 @@ MyStackViewPage {
                 spacing: 18
 
                 MyText {
-                    text: "Profile:"
+                    text: qsTr("Profile:")
                 }
 
                 MyComboBox {
@@ -119,7 +119,7 @@ MyStackViewPage {
                     id: offsetApplyProfileButton
                     enabled: false
                     Layout.preferredWidth: 200
-                    text: "Apply"
+                    text: qsTr("Apply")
                     onClicked: {
                         if (offsetProfileComboBox.currentIndex > 0) {
                             MoveCenterTabController.applyOffsetProfile(offsetProfileComboBox.currentIndex - 1)
@@ -137,7 +137,7 @@ MyStackViewPage {
                     id: offsetDeleteProfileButton
                     enabled: false
                     Layout.preferredWidth: 200
-                    text: "Delete Profile"
+                    text: qsTr("Delete Profile")
                     onClicked: {
                         if (offsetProfileComboBox.currentIndex > 0) {
                             offsetDeleteProfileDialog.profileIndex = offsetProfileComboBox.currentIndex - 1
@@ -147,7 +147,7 @@ MyStackViewPage {
                 }
                 MyPushButton {
                     Layout.preferredWidth: 200
-                    text: "New Profile"
+                    text: qsTr("New Profile")
                     onClicked: {
                         offsetNewProfileDialog.openPopup()
                     }
@@ -162,7 +162,7 @@ MyStackViewPage {
 
             label: MyText {
                 leftPadding: 10
-                text: "Move Space"
+                text: qsTr("Move Space")
                 bottomPadding: -10
             }
             background: Rectangle {
@@ -184,7 +184,7 @@ MyStackViewPage {
                     columns: 6
 
                     MyText {
-                        text: "X-Axis (Left/Right):"
+                        text: qsTr("X-Axis (Left/Right):")
                         Layout.preferredWidth: 340
                     }
 
@@ -232,14 +232,14 @@ MyStackViewPage {
 
                     MyToggleButton {
                         id: lockXToggle
-                        text: "Lock X"
+                        text: qsTr("Lock X")
                         onCheckedChanged: {
                             MoveCenterTabController.lockXToggle = this.checked
                         }
                     }
 
                     MyText {
-                        text: "Y-Axis (Down/Up):"
+                        text: qsTr("Y-Axis (Down/Up):")
                         Layout.preferredWidth: 340
                     }
 
@@ -289,14 +289,14 @@ MyStackViewPage {
 
                     MyToggleButton {
                         id: lockYToggle
-                        text: "Lock Y"
+                        text: qsTr("Lock Y")
                         onCheckedChanged: {
                             MoveCenterTabController.lockYToggle = this.checked
                         }
                     }
 
                     MyText {
-                        text: "Z-Axis (Forth/Back):"
+                        text: qsTr("Z-Axis (Forth/Back):")
                         Layout.preferredWidth: 340
                     }
 
@@ -343,7 +343,7 @@ MyStackViewPage {
 
                     MyToggleButton {
                         id: lockZToggle
-                        text: "Lock Z"
+                        text: qsTr("Lock Z")
                         onCheckedChanged: {
                             MoveCenterTabController.lockZToggle = this.checked
                         }
@@ -359,7 +359,7 @@ MyStackViewPage {
 
             label: MyText {
                 leftPadding: 10
-                text: "Rotate Space"
+                text: qsTr("Rotate Space")
                 bottomPadding: -10
             }
             background: Rectangle {
@@ -444,7 +444,7 @@ MyStackViewPage {
                         MyPushButton {
                             id: spaceRotationApplyButton
                             Layout.preferredWidth: 145
-                            text:"Apply"
+                            text:qsTr("Apply")
                             onClicked: {
                                 MoveCenterTabController.rotation = MoveCenterTabController.tempRotation
                             }
@@ -464,7 +464,7 @@ MyStackViewPage {
                 MyPushButton {
                     id: spaceResetButton
                     Layout.preferredWidth: 250
-                    text: "Reset"
+                    text: qsTr("Reset")
                     onClicked: {
                         MoveCenterTabController.reset()
                     }
@@ -478,7 +478,7 @@ MyStackViewPage {
                     id: spaceLogMatrices
                     Layout.preferredWidth: 250
                     visible: MoveCenterTabController.showLogMatricesButton
-                    text: "Log Matrices"
+                    text: qsTr("Log Matrices")
                     onClicked: {
                         MoveCenterTabController.outputLogPoses()
                     }
@@ -488,7 +488,7 @@ MyStackViewPage {
                     id: spaceSeatedRecenter
                     Layout.preferredWidth: 250
                     visible: true
-                    text: "Re-center"
+                    text: qsTr("Re-center")
                     onClicked: {
                         MoveCenterTabController.sendSeatedRecenter()
                     }
@@ -512,12 +512,12 @@ MyStackViewPage {
             spaceLogMatrices.visible = MoveCenterTabController.showLogMatricesButton
 			
             if (MoveCenterTabController.trackingUniverse === 0) {
-                spaceModeText.text = "Sitting"
+                spaceModeText.text = qsTr("Sitting")
                 spaceSeatedRecenter.visible = true
             } else if (MoveCenterTabController.trackingUniverse === 1) {
-                spaceModeText.text = "Standing"
+                spaceModeText.text = qsTr("Standing")
             } else {
-                spaceModeText.text = "Unknown(" + MoveCenterTabController.trackingUniverse + ")"
+                spaceModeText.text = qsTr("Unknown (%1)").arg(MoveCenterTabController.trackingUniverse)
             }
             reloadOffsetProfiles()
         }
@@ -552,12 +552,12 @@ MyStackViewPage {
 			}
             onTrackingUniverseChanged: {
                 if (MoveCenterTabController.trackingUniverse === 0) {
-                    spaceModeText.text = "Sitting"
+                    spaceModeText.text = qsTr("Sitting")
                     spaceSeatedRecenter.visible = true
                 } else if (MoveCenterTabController.trackingUniverse === 1) {
-                    spaceModeText.text = "Standing"
+                    spaceModeText.text = qsTr("Standing")
                 } else {
-                    spaceModeText.text = "Unknown(" + MoveCenterTabController.trackingUniverse + ")"
+                    spaceModeText.text = qsTr("Unknown (%1)").arg(MoveCenterTabController.trackingUniverse)
                 }
             }
             onOffsetProfilesUpdated: {

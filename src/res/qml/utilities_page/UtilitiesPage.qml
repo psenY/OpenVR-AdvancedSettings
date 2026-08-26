@@ -9,7 +9,7 @@ import "../common"
 import "misc"
 
 MyStackViewPage {
-    headerText: "Utilities"
+    headerText: qsTr("Utilities")
 
     content: ColumnLayout {
         spacing: 18

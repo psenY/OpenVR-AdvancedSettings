@@ -10,7 +10,7 @@ GroupBox {
 
     label: MyText {
         leftPadding: 10
-        text: "Gravity Settings"
+        text: qsTr("Gravity Settings")
         bottomPadding: -10
     }
     background: Rectangle {
@@ -34,7 +34,7 @@ GroupBox {
 
             MyToggleButton {
                 id: gravityToggleButton
-                text: "On"
+                text: qsTr("On")
                 onCheckedChanged: {
                     MoveCenterTabController.gravityActive = this.checked
                 }
@@ -45,7 +45,7 @@ GroupBox {
             }
 
             MyText {
-                text: "Gravity Strength (+ is down):"
+                text: qsTr("Gravity Strength (+ is down):")
                 horizontalAlignment: Text.AlignRight
                 Layout.rightMargin: 2
             }
@@ -72,7 +72,7 @@ GroupBox {
             MyPushButton {
                 id: gravityMoonButton
                 Layout.preferredWidth: 110
-                text:"Moon"
+                text:qsTr("Moon")
                 onClicked: {
                     MoveCenterTabController.gravityStrength = 1.62
                 }
@@ -80,7 +80,7 @@ GroupBox {
             MyPushButton {
                 id: gravityMarsButton
                 Layout.preferredWidth: 110
-                text:"Mars"
+                text:qsTr("Mars")
                 onClicked: {
                     MoveCenterTabController.gravityStrength = 3.71
                 }
@@ -88,7 +88,7 @@ GroupBox {
             MyPushButton {
                 id: gravityEarthButton
                 Layout.preferredWidth: 110
-                text:"Earth"
+                text:qsTr("Earth")
                 onClicked: {
                     MoveCenterTabController.gravityStrength = 9.80
                 }
@@ -96,7 +96,7 @@ GroupBox {
             MyPushButton {
                 id: gravityJupiterButton
                 Layout.preferredWidth: 110
-                text:"Jupiter"
+                text:qsTr("Jupiter")
                 onClicked: {
                     MoveCenterTabController.gravityStrength = 24.79
                 }
@@ -107,7 +107,7 @@ GroupBox {
 
             MyToggleButton {
                 id: momentumToggleButton
-                text: "Save Momentum"
+                text: qsTr("Save Momentum")
                 onCheckedChanged: {
                     MoveCenterTabController.momentumSave = this.checked
                 }
@@ -118,7 +118,7 @@ GroupBox {
             }
 
             MyText {
-                text: "Friction:"
+                text: qsTr("Friction:")
                 horizontalAlignment: Text.AlignRight
                 Layout.rightMargin: 2
             }
@@ -155,7 +155,7 @@ GroupBox {
             }
 
             MyText {
-                text: "Fling Strength:"
+                text: qsTr("Fling Strength:")
                 horizontalAlignment: Text.AlignRight
                 Layout.rightMargin: 2
             }
@@ -181,7 +181,7 @@ GroupBox {
 
             MyPushButton2 {
                 Layout.preferredWidth: 50
-                text: "1x"
+                text: qsTr("1x")
                 onClicked: {
                     MoveCenterTabController.flingStrength = 1.0
                 }
@@ -189,7 +189,7 @@ GroupBox {
 
             MyPushButton2 {
                 Layout.preferredWidth: 50
-                text: "2x"
+                text: qsTr("2x")
                 onClicked: {
                     MoveCenterTabController.flingStrength = 2.0
                 }
@@ -197,7 +197,7 @@ GroupBox {
 
             MyPushButton2 {
                 Layout.preferredWidth: 50
-                text: "3x"
+                text: qsTr("3x")
                 onClicked: {
                     MoveCenterTabController.flingStrength = 3.0
                 }

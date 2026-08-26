@@ -10,7 +10,7 @@ GroupBox {
 
     label: MyText {
         leftPadding: 10
-        text: "Misc:"
+        text: qsTr("Misc:")
         bottomPadding: -10
     }
     background: Rectangle {
@@ -34,7 +34,7 @@ GroupBox {
 
             MyToggleButton {
                 id: chaperoneFloorToggleBtn
-                text: "Floor Bounds Always On"
+                text: qsTr("Floor Bounds Always On")
                 Layout.preferredWidth: 375
                 onCheckedChanged: {
                     ChaperoneTabController.setChaperoneFloorToggle(this.checked, false)
@@ -44,7 +44,7 @@ GroupBox {
 
             MyToggleButton {
                 id: legacyCenterMarkerbtn
-                text: "Legacy Center Marker"
+                text: qsTr("Legacy Center Marker")
                 Layout.preferredWidth: 375
                 onCheckedChanged: {
                     ChaperoneTabController.setCenterMarker(this.checked, false)
@@ -53,7 +53,7 @@ GroupBox {
 
             MyPushButton{
                 id:btnResetOrientation
-                text: "Reset Turn Counter"
+                text: qsTr("Reset Turn Counter")
                 onClicked: {
                     StatisticsTabController.statsRotationResetClicked()
                 }

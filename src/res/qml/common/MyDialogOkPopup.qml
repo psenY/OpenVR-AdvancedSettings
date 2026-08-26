@@ -72,7 +72,7 @@ Popup {
                     }
                     MyPushButton {
                         implicitWidth: 200
-                        text: "Ok"
+                        text: qsTr("Ok")
                         onClicked: {
                             okClicked = true
                             myDialogPopup.close()
