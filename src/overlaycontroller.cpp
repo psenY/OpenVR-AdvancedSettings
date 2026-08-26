@@ -148,8 +148,9 @@ OverlayController::OverlayController( bool desktopMode,
 
     if ( !vr::VROverlay() )
     {
-        QMessageBox::critical(
-            nullptr, "OpenVR Advanced Settings Overlay", "Is OpenVR running?" );
+        QMessageBox::critical( nullptr,
+                               tr( "OpenVR Advanced Settings Overlay" ),
+                               tr( "Is OpenVR running?" ) );
         throw std::runtime_error( std::string( "No Overlay interface" ) );
     }
 
@@ -424,9 +425,10 @@ void OverlayController::SetWidget( QQuickItem* quickItem,
         {
             if ( overlayError == vr::VROverlayError_KeyInUse )
             {
-                QMessageBox::critical( nullptr,
-                                       "OpenVR Advanced Settings Overlay",
-                                       "Another instance is already running." );
+                QMessageBox::critical(
+                    nullptr,
+                    tr( "OpenVR Advanced Settings Overlay" ),
+                    tr( "Another instance is already running." ) );
             }
             throw std::runtime_error( std::string(
                 "Failed to create Overlay: "

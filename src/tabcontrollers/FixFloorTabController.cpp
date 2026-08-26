@@ -23,7 +23,7 @@ void FixFloorTabController::dashboardLoopTick(
                     vr::TrackedControllerRole_LeftHand );
             if ( leftId == vr::k_unTrackedDeviceIndexInvalid )
             {
-                statusMessage = "No left controller found.";
+                statusMessage = tr( "No left controller found." );
                 statusMessageTimeout = 2.0;
                 emit statusMessageSignal();
                 emit measureEndSignal();
@@ -35,7 +35,7 @@ void FixFloorTabController::dashboardLoopTick(
                     vr::TrackedControllerRole_RightHand );
             if ( rightId == vr::k_unTrackedDeviceIndexInvalid )
             {
-                statusMessage = "No right controller found.";
+                statusMessage = tr( "No right controller found." );
                 statusMessageTimeout = 2.0;
                 emit statusMessageSignal();
                 emit measureEndSignal();
@@ -48,7 +48,7 @@ void FixFloorTabController::dashboardLoopTick(
             if ( !leftPose->bPoseIsValid || !leftPose->bDeviceIsConnected
                  || leftPose->eTrackingResult != vr::TrackingResult_Running_OK )
             {
-                statusMessage = "Left controller tracking problems.";
+                statusMessage = tr( "Left controller tracking problems." );
                 statusMessageTimeout = 2.0;
                 emit statusMessageSignal();
                 emit measureEndSignal();
@@ -59,7 +59,7 @@ void FixFloorTabController::dashboardLoopTick(
                       || rightPose->eTrackingResult
                              != vr::TrackingResult_Running_OK )
             {
-                statusMessage = "Right controller tracking problems.";
+                statusMessage = tr( "Right controller tracking problems." );
                 statusMessageTimeout = 2.0;
                 emit statusMessageSignal();
                 emit measureEndSignal();
@@ -208,8 +208,8 @@ void FixFloorTabController::dashboardLoopTick(
                     offset[2] = floorOffsetZ;
                 }
                 parent->m_moveCenterTabController.addOffset( offset );
-                statusMessage
-                    = ( state == 2 ) ? "Recentering ... Ok" : "Fixing ... OK";
+                statusMessage = ( state == 2 ) ? tr( "Recentering ... Ok" )
+                                               : tr( "Fixing ... OK" );
                 statusMessageTimeout = 1.0;
                 emit statusMessageSignal();
                 emit measureEndSignal();
@@ -291,7 +291,7 @@ void FixFloorTabController::setCanUndo( bool value, bool notify )
 void FixFloorTabController::fixFloorClicked()
 {
     parent->m_moveCenterTabController.reset();
-    statusMessage = "Fixing ...";
+    statusMessage = tr( "Fixing ..." );
     statusMessageTimeout = 1.0;
     emit statusMessageSignal();
     emit measureStartSignal();
@@ -311,7 +311,7 @@ void FixFloorTabController::undoFixFloorClicked()
     LOG( INFO ) << "Fix Floor: Undo Floor Offset = [" << -floorOffsetX << ", "
                 << -floorOffsetY << ", " << -floorOffsetZ << "]";
     floorOffsetY = 0.0f;
-    statusMessage = "Undo ... OK";
+    statusMessage = tr( "Undo ... OK" );
     statusMessageTimeout = 1.0;
     emit statusMessageSignal();
     setCanUndo( false );

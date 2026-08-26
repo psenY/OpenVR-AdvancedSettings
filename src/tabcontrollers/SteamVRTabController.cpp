@@ -599,7 +599,7 @@ void SteamVRTabController::onConnected()
                          "\"serial\":\"";
     messageout.append( m_last_pair_sn );
     messageout.append( QString::fromStdString( "\", \"timeoutSeconds\":15}" ) );
-    emit pairStatusChanged( QString( "Pairing..." ) );
+    emit pairStatusChanged( tr( "Pairing..." ) );
     if ( m_last_pair_sn == "" )
     {
         LOG( ERROR ) << "No Last SN to pair, this shouldn't happen";
@@ -617,12 +617,12 @@ void SteamVRTabController::onMsgRec( QString Msg )
     if ( Msg.contains( "success" ) )
     {
         LOG( INFO ) << "Pair Success";
-        emit pairStatusChanged( QString( "Success" ) );
+        emit pairStatusChanged( tr( "Success" ) );
     }
     if ( Msg.contains( "timeout" ) )
     {
         LOG( INFO ) << "Pair Timeout";
-        emit pairStatusChanged( QString( "Timeout" ) );
+        emit pairStatusChanged( tr( "Timeout" ) );
     }
     m_webSocket.close();
 }
