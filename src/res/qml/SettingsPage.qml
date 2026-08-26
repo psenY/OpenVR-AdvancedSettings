@@ -6,7 +6,10 @@ import ovras.advsettings 1.0
 import "common"
 
 MyStackViewPage {
-    headerText: "Application Settings"
+    id: settingsPage
+    property bool languageSelectionInitialized: false
+
+    headerText: qsTr("Application Settings")
 
     content: ScrollView{
         ScrollBar.horizontal.policy: ScrollBar.AlwaysOff
@@ -20,7 +23,7 @@ MyStackViewPage {
 
             RowLayout{
                 MyText {
-                    text: "Application Volume:"
+                    text: qsTr("Application Volume:")
                     Layout.rightMargin: 12
                 }
 
@@ -85,16 +88,35 @@ MyStackViewPage {
                 }
             }
 
+            RowLayout {
+                MyText {
+                    text: qsTr("Language (restart required):")
+                    Layout.preferredWidth: 320
+                }
+
+                MyComboBox {
+                    id: languageComboBox
+                    Layout.preferredWidth: 360
+                    model: ["English", "日本語", "繁體中文", "简体中文"]
+                    onCurrentIndexChanged: {
+                        if (settingsPage.languageSelectionInitialized) {
+                            var languageCodes = ["en", "ja_JP", "zh_TW", "zh_CN"]
+                            SettingsTabController.language = languageCodes[currentIndex]
+                        }
+                    }
+                }
+            }
+
             MyToggleButton {
                 id: settingsAutoStartToggle
-                text: "Autostart"
+                text: qsTr("Autostart")
                 onCheckedChanged: {
                     SettingsTabController.setAutoStartEnabled(checked, false)
                 }
             }
             MyToggleButton {
                 id: desktopModeToggleButton
-                text: "Desktop Mode (restart required)"
+                text: qsTr("Desktop Mode (restart required)")
                 onCheckedChanged: {
                     OverlayController.setDesktopModeToggle(this.checked, false)
                 }
@@ -102,7 +124,7 @@ MyStackViewPage {
 
             MyToggleButton {
                 id: universeCenteredRotationToggle
-                text: "Universe-Centered Rotation (Disables HMD Centering)"
+                text: qsTr("Universe-Centered Rotation (Disables HMD Centering)")
                 onCheckedChanged: {
                     MoveCenterTabController.setUniverseCenteredRotation(checked, true)
                 }
@@ -111,7 +133,7 @@ MyStackViewPage {
 
             MyToggleButton {
                 id: disableCrashRecoveryToggle
-                text: "Enable Automatic Crash Recovery of Chaperone Config"
+                text: qsTr("Enable Automatic Crash Recovery of Chaperone Config")
                 onCheckedChanged: {
                     OverlayController.setCrashRecoveryDisabled(!checked, true)
                 }
@@ -119,14 +141,14 @@ MyStackViewPage {
 
             MyToggleButton {
                 id: disableVersionCheckToggle
-                text: "Disable Notification of Newer Version Availability"
+                text: qsTr("Disable Notification of Newer Version Availability")
                 onCheckedChanged: {
                     OverlayController.setDisableVersionCheck(checked, true)
                 }
             }
             MyToggleButton {
                 id: nativeChaperoneToggleButton
-                text: "Force Use SteamVR Chaperone (experimental + SteamVR restart required)"
+                text: qsTr("Force Use SteamVR Chaperone (experimental + SteamVR restart required)")
                 onCheckedChanged: {
                     SettingsTabController.setNativeChaperoneToggle(this.checked, true)
                 }
@@ -136,7 +158,7 @@ MyStackViewPage {
 
                 MyToggleButton {
                     id: autoApplyChaperoneToggleButton
-                    text: "Auto Apply Chaperone Profile:"
+                    text: qsTr("Auto Apply Chaperone Profile:")
                     onCheckedChanged: {
                         OverlayController.setAutoApplyChaperoneEnabled(this.checked, true)
                     }
@@ -163,7 +185,7 @@ MyStackViewPage {
                     id: summaryChaperoneProfileApplyButton
                     enabled: false
                     Layout.preferredWidth: 150
-                    text: "Select"
+                    text: qsTr("Select")
                     onClicked: {
                         if (summaryChaperoneProfileComboBox.currentIndex > 0) {
                             ChaperoneTabController.applyChaperoneProfile(summaryChaperoneProfileComboBox.currentIndex - 1)
@@ -175,14 +197,14 @@ MyStackViewPage {
             }
             MyToggleButton {
                 id: oculusSdkToggleButton
-                text: "Force Use SteamVR (Disable Oculus API [experimental])"
+                text: qsTr("Force Use SteamVR (Disable Oculus API [experimental])")
                 onCheckedChanged: {
                     SettingsTabController.setOculusSdkToggle(this.checked, true)
                 }
             }
             MyToggleButton {
                 id: exclusiveInputToggleButton
-                text: "Exclusive Input Toggle (This enables Key Binding to Toggle state)"
+                text: qsTr("Exclusive Input Toggle (This enables Key Binding to Toggle state)")
                 onCheckedChanged: {
                     OverlayController.setExclusiveInputEnabled(this.checked, true)
                 }
@@ -193,7 +215,7 @@ MyStackViewPage {
 
                 MyToggleButton {
                     id: vsyncDisabledToggle
-                    text: "Disable App Vsync"
+                    text: qsTr("Disable App Vsync")
                     onCheckedChanged: {
                         OverlayController.setVsyncDisabled(checked, true)
                         customTickRateText.visible = checked
@@ -204,7 +226,7 @@ MyStackViewPage {
 
                 MyText {
                     id: customTickRateLabel
-                    text: "Custom Tick Rate: "
+                    text: qsTr("Custom Tick Rate: ")
                     horizontalAlignment: Text.AlignRight
                     Layout.leftMargin: 20
                     Layout.rightMargin: 2
@@ -231,7 +253,7 @@ MyStackViewPage {
 
                 MyText {
                     id: customTickRateMsLabel
-                    text: "ms"
+                    text: qsTr("ms")
                     horizontalAlignment: Text.AlignLeft
                     Layout.leftMargin: 1
                 }
@@ -247,7 +269,7 @@ MyStackViewPage {
 
                 MyText {
                     id: debugStateLabel
-                    text: "Debug State: "
+                    text: qsTr("Debug State: ")
                     horizontalAlignment: Text.AlignRight
                     Layout.leftMargin: 20
                     Layout.rightMargin: 2
@@ -282,7 +304,7 @@ MyStackViewPage {
                 MyPushButton {
                     id: shutdownButton
                     Layout.preferredWidth: 250
-                    text: "Shutdown OVRAS"
+                    text: qsTr("Shutdown OVRAS")
                     onClicked: {
                         OverlayController.exitApp()
                         }
@@ -305,7 +327,7 @@ MyStackViewPage {
                     // set visible to true here in builds when we need a debug toggle checkbox, otherwise false when on master branch.
                     visible: false
                     id: debugToggle
-                    text: "Debug"
+                    text: qsTr("Debug")
                     onCheckedChanged: {
                         OverlayController.setEnableDebug(checked, true)
                     }
@@ -330,6 +352,11 @@ MyStackViewPage {
                 exclusiveInputToggleButton.checked = OverlayController.exclusiveInputEnabled
                 autoApplyChaperoneToggleButton.checked = OverlayController.autoApplyChaperoneEnabled
                 desktopModeToggleButton.checked = OverlayController.desktopModeToggle
+
+                var languageCodes = ["en", "ja_JP", "zh_TW", "zh_CN"]
+                var languageIndex = languageCodes.indexOf(SettingsTabController.language)
+                languageComboBox.currentIndex = languageIndex >= 0 ? languageIndex : 0
+                settingsPage.languageSelectionInitialized = true
 
 
                 reloadChaperoneProfiles()

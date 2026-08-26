@@ -1,6 +1,16 @@
 QT       += core gui qml quick multimedia widgets websockets
 CONFIG   += c++1z file_copies optimize_full
 
+TRANSLATIONS += src/translations/advancedsettings_ja_JP.ts \
+                src/translations/advancedsettings_zh_CN.ts \
+                src/translations/advancedsettings_zh_TW.ts
+CONFIG += lrelease embed_translations
+QM_FILES_RESOURCE_PREFIX = /i18n
+
+lupdate_only {
+    SOURCES += $$files(src/res/qml/*.qml, true)
+}
+
 DEFINES += ELPP_THREAD_SAFE ELPP_QT_LOGGING ELPP_NO_DEFAULT_LOG_FILE
 
 VERSION = "$$cat($$PWD/build_scripts/compile_version_string.txt)"

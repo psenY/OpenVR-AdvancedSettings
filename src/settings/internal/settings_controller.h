@@ -554,6 +554,7 @@ private:
     constexpr static auto discordDefaultMuteKeybinding = "^>m";
     constexpr static auto pressDefault = "F9";
     constexpr static auto nameDefault = "«none»";
+    constexpr static auto languageDefault = "system";
     std::array<StringSettingValue, stringSettingsSize> m_stringSettings{
         StringSettingValue{ StringSetting::KEYBOARDSHORTCUT_keyboardOne,
                             SettingCategory::KeyboardShortcut,
@@ -579,6 +580,10 @@ private:
                             SettingCategory::Application,
                             QtInfo{ "autoApplyChaperoneName" },
                             nameDefault },
+        StringSettingValue{ StringSetting::APPLICATION_language,
+                            SettingCategory::Application,
+                            QtInfo{ "language" },
+                            languageDefault },
     };
 
     constexpr static auto intSettingsSize

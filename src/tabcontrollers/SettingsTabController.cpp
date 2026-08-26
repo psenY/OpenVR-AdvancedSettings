@@ -1,6 +1,7 @@
 #include "SettingsTabController.h"
 #include <QQuickWindow>
 #include "../overlaycontroller.h"
+#include "../translations/translations.h"
 #include "../utils/update_rate.h"
 
 // application namespace
@@ -60,6 +61,25 @@ bool SettingsTabController::oculusSdkToggle()
         return ( p.second );
     }
     return false;
+}
+
+QString SettingsTabController::language() const
+{
+    return QString::fromStdString(
+        settings::getSetting( settings::StringSetting::APPLICATION_language ) );
+}
+
+void SettingsTabController::setLanguage( const QString& value )
+{
+    if ( !translations::isSupportedLanguageSetting( value )
+         || language() == value )
+    {
+        return;
+    }
+
+    settings::setSetting( settings::StringSetting::APPLICATION_language,
+                          value.toStdString() );
+    emit languageChanged( value );
 }
 
 void SettingsTabController::setNativeChaperoneToggle( bool value, bool notify )

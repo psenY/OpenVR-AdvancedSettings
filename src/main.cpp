@@ -1,6 +1,7 @@
 #include "utils/setup.h"
 #include "settings/settings.h"
 #include "openvr/ovr_settings_wrapper.h"
+#include "translations/translations.h"
 #ifdef _WIN64
 #    include <windows.h>
 extern "C" __declspec( dllexport ) DWORD NvOptimusEnablement = 0x00000001;
@@ -31,6 +32,9 @@ int main( int argc, char* argv[] )
         application_strings::applicationVersionString );
 
     qInstallMessageHandler( mainQtMessageHandler );
+
+    QTranslator applicationTranslator;
+    translations::install( mainEventLoop, applicationTranslator );
 
     const auto commandLineArgs
         = argument::returnCommandLineParser( mainEventLoop );

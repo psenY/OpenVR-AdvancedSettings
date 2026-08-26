@@ -22,6 +22,8 @@ class SettingsTabController : public QObject
             setNativeChaperoneToggle NOTIFY nativeChaperoneToggleChanged )
     Q_PROPERTY( bool oculusSdkToggle READ oculusSdkToggle WRITE
                     setOculusSdkToggle NOTIFY oculusSdkToggleChanged )
+    Q_PROPERTY( QString language READ language WRITE setLanguage NOTIFY
+                    languageChanged )
 
 private:
     OverlayController* parent;
@@ -37,16 +39,19 @@ public:
     bool autoStartEnabled() const;
     bool nativeChaperoneToggle();
     bool oculusSdkToggle();
+    QString language() const;
 
 public slots:
     void setAutoStartEnabled( bool value, bool notify = true );
     void setNativeChaperoneToggle( bool value, bool notify = true );
     void setOculusSdkToggle( bool value, bool notify = true );
+    void setLanguage( const QString& value );
 
 signals:
     void autoStartEnabledChanged( bool value );
     void nativeChaperoneToggleChanged( bool value );
     void oculusSdkToggleChanged( bool value );
+    void languageChanged( const QString& value );
 };
 
 } // namespace advsettings

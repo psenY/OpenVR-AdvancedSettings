@@ -28,6 +28,7 @@ SOURCES += src/main.cpp\
     src/settings/settings_object.cpp \
     src/alarm_clock/vr_alarm.cpp \
     src/utils/update_rate.cpp \
+    src/translations/translations.cpp \
 
 
 
@@ -76,6 +77,7 @@ HEADERS += src/overlaycontroller.h \
     src/settings/internal/settings_object_data.h \
     src/utils/update_rate.h \
     src/utils/d3d11_overlay.h \
+    src/translations/translations.h \
 
 
 win32 {
