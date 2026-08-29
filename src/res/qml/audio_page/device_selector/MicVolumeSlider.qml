@@ -11,7 +11,7 @@ ColumnLayout {
     }
     RowLayout {
         MyText {
-            text: "Microphone Volume:"
+            text: "麦克风音量:"
             Layout.preferredWidth: 260
         }
         

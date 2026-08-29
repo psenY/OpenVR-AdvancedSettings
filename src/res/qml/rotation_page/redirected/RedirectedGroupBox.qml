@@ -10,7 +10,7 @@ GroupBox {
 
     label: MyText {
         leftPadding: 10
-        text: "Vestibular Motion (for continuous redirected walking)"
+        text: "前庭运动（用于连续重定向行走）"
         bottomPadding: -12
     }
     background: Rectangle {
@@ -32,7 +32,7 @@ GroupBox {
       RowLayout{
             MyToggleButton {
                 id: redirectedModeToggle
-                text: "Toggle On/Off"
+                text: "开关切换"
                 Layout.preferredWidth: 225
                 onCheckedChanged: {
                     RotationTabController.setVestibularMotionEnabled(this.checked, true);
@@ -47,7 +47,7 @@ GroupBox {
             MyPushButton {
                 id: imperceptableButton
                 Layout.preferredWidth: 180
-                text:"Imperceptable"
+                text:"不可察觉"
                 onClicked: {
                     RotationTabController.setVestibularMotionRadius(22.0)
                 }
@@ -55,7 +55,7 @@ GroupBox {
             MyPushButton {
                 id: lightButton
                 Layout.preferredWidth: 125
-                text:"Light"
+                text:"轻微"
                 onClicked: {
                     RotationTabController.setVestibularMotionRadius(11.0)
                 }
@@ -63,7 +63,7 @@ GroupBox {
             MyPushButton {
                 id: strongButton
                 Layout.preferredWidth: 125
-                text:"Strong"
+                text:"强烈"
                 onClicked: {
                     RotationTabController.setVestibularMotionRadius(5.0)
                 }
@@ -71,14 +71,14 @@ GroupBox {
             MyPushButton {
                 id: extremeButton
                 Layout.preferredWidth: 125
-                text:"Extreme"
+                text:"极强"
                 onClicked: {
                     RotationTabController.setVestibularMotionRadius(1.0)
                 }
            }
 
             MyText{
-                text: "Radius: "
+                text: "半径: "
                 horizontalAlignment: Text.AlignRight
                 Layout.rightMargin: 4
             }

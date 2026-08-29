@@ -10,7 +10,7 @@ GroupBox {
 
     label: MyText {
         leftPadding: 10
-        text: "Brightness and Color (via overlay)"
+        text: "亮度与颜色（通过叠加层）"
         bottomPadding: -10
     }
     background: Rectangle {
@@ -34,7 +34,7 @@ GroupBox {
 
             MyToggleButton {
                 id: brightnessToggle
-                text: "Toggle On/Off"
+                text: "开关切换"
                 onCheckedChanged: {
                     VideoTabController.setBrightnessEnabled(this.checked, true)
                 }
@@ -45,7 +45,7 @@ GroupBox {
             }
 
             MyText {
-                text: "Brightness:"
+                text: "亮度:"
                 horizontalAlignment: Text.AlignRight
                 Layout.rightMargin: 10
             }
@@ -90,7 +90,7 @@ GroupBox {
 
             MyToggleButton {
                 id: colorToggle
-                text: "Toggle On/Off"
+                text: "开关切换"
                 onCheckedChanged: {
                     VideoTabController.setColorOverlayEnabled(this.checked, true)                }
             }
@@ -100,7 +100,7 @@ GroupBox {
             }
 
             MyText {
-                text: "Opacity:"
+                text: "不透明度:"
                 horizontalAlignment: Text.AlignRight
                 Layout.rightMargin: 10
             }
@@ -149,7 +149,7 @@ GroupBox {
             Layout.fillWidth: true
 
             MyText {
-                text: "Red:"
+                text: "红:"
                 horizontalAlignment: Text.AlignRight
                 Layout.preferredWidth: 75
             }
@@ -191,7 +191,7 @@ GroupBox {
                 }
             }
             MyText {
-                text: "Green:"
+                text: "绿:"
                 horizontalAlignment: Text.AlignRight
                 Layout.preferredWidth: 85
             }
@@ -234,7 +234,7 @@ GroupBox {
             }
 
                 MyText {
-                    text: "Blue:"
+                    text: "蓝:"
                     horizontalAlignment: Text.AlignRight
                     Layout.preferredWidth: 75
                 }

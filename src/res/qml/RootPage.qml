@@ -12,7 +12,7 @@ MyStackViewPage {
     id: rootPage
     width: 1200
     height: 800
-    headerText: "OVR Advanced Settings"
+    headerText: "OVR Advanced Settings - PuddingKC"
     headerShowBackButton: false
     stackView: mainView
     content: Item {
@@ -42,7 +42,7 @@ MyStackViewPage {
                        id: chaperoneButton
                        iconPath: "qrc:/main_menu_icons/chaperone_tab_icon"
                        activationSoundEnabled: false
-                       text: "   Chaperone"
+                       text: "   边界"
                        Layout.fillWidth: true
                        onClicked: {
                            MyResources.playFocusChangedSound()
@@ -54,7 +54,7 @@ MyStackViewPage {
                        id: playSpaceButton
                        iconPath: "qrc:/main_menu_icons/offsets_tab_icon"
                        activationSoundEnabled: false
-                       text: "   Offsets"
+                       text: "   偏移"
                        Layout.fillWidth: true
                        onClicked: {
                            MyResources.playFocusChangedSound()
@@ -66,7 +66,7 @@ MyStackViewPage {
                        id: motionButton
                        iconPath: "qrc:/main_menu_icons/motion_tab_icon"
                        activationSoundEnabled: false
-                       text: "   Motion"
+                       text: "   移动"
                        Layout.fillWidth: true
                        onClicked: {
                            MyResources.playFocusChangedSound()
@@ -77,7 +77,7 @@ MyStackViewPage {
                        id: rotationButton
                        iconPath: "qrc:/main_menu_icons/rotation_tab_icon"
                        activationSoundEnabled: false
-                       text: "   Rotation"
+                       text: "   旋转"
                        Layout.fillWidth: true
                        onClicked: {
                            MyResources.playFocusChangedSound()
@@ -89,7 +89,7 @@ MyStackViewPage {
                        id: fixFloorButton
                        iconPath: "qrc:/main_menu_icons/space_fix_tab_icon"
                        activationSoundEnabled: false
-                       text: "   Space Fix"
+                       text: "   空间修正"
                        Layout.fillWidth: true
                        onClicked: {
                            MyResources.playFocusChangedSound()
@@ -101,7 +101,7 @@ MyStackViewPage {
                        id: audioButton
                        iconPath: "qrc:/main_menu_icons/audio_tab_icon"
                        activationSoundEnabled: false
-                       text: "   Audio"
+                       text: "   音频"
                        Layout.fillWidth: true
                        onClicked: {
                            MyResources.playFocusChangedSound()
@@ -113,7 +113,7 @@ MyStackViewPage {
                        id: videoButton
                        iconPath: "qrc:/main_menu_icons/video_tab_icon"
                        activationSoundEnabled: false
-                       text: "   Video"
+                       text: "   视频"
                        Layout.fillWidth: true
                        onClicked: {
                            MyResources.playFocusChangedSound()
@@ -125,7 +125,7 @@ MyStackViewPage {
                        id: utilitiesButton
                        iconPath: "qrc:/main_menu_icons/utilities_tab_icon"
                        activationSoundEnabled: false
-                       text: "   Utilities"
+                       text: "   工具"
                        Layout.fillWidth: true
                        onClicked: {
                            MyResources.playFocusChangedSound()
@@ -138,7 +138,7 @@ MyStackViewPage {
                        id: statisticsButton
                        iconPath: "qrc:/main_menu_icons/statistics_tab_icon"
                        activationSoundEnabled: false
-                       text: "   Statistics"
+                       text: "   统计"
                        Layout.fillWidth: true
                        onClicked: {
                            MyResources.playFocusChangedSound()
@@ -155,7 +155,7 @@ MyStackViewPage {
                        id: bindingsButton
                        iconPath: "qrc:/main_menu_icons/bindings_tab_icon"
                        activationSoundEnabled: false
-                       text: "   Bindings"
+                       text: "   按键绑定"
                        Layout.fillWidth: true
                        onClicked: {
                             SteamVRTabController.launchBindingUI()
@@ -166,7 +166,7 @@ MyStackViewPage {
                        id: settingsButton
                        iconPath: "qrc:/main_menu_icons/settings_tab_icon"
                        activationSoundEnabled: false
-                       text: "   Settings"
+                       text: "   设置"
                        Layout.fillWidth: true
                        onClicked: {
                            MyResources.playFocusChangedSound()
@@ -186,7 +186,7 @@ MyStackViewPage {
                        spacing: 18
 
                        MyText {
-                           text: "Video Profile:"
+                           text: "视频配置文件:"
                        }
                        Item{
                           Layout.fillWidth: true
@@ -211,7 +211,7 @@ MyStackViewPage {
                            id: summaryVideoProfileApplyButton
                            enabled: false
                            Layout.preferredWidth: 150
-                           text: "Apply"
+                           text: "应用"
                            onClicked: {
                                if (summaryVideoProfileComboBox.currentIndex > 0) {
                                    VideoTabController.applyVideoProfile(summaryVideoProfileComboBox.currentIndex - 1)
@@ -225,7 +225,7 @@ MyStackViewPage {
                        spacing: 18
 
                        MyText {
-                           text: "Chaperone Profile:"
+                           text: "边界配置文件:"
                        }
 
                        MyComboBox {
@@ -249,7 +249,7 @@ MyStackViewPage {
                            id: summaryChaperoneProfileApplyButton
                            enabled: false
                            Layout.preferredWidth: 150
-                           text: "Apply"
+                           text: "应用"
                            onClicked: {
                                if (summaryChaperoneProfileComboBox.currentIndex > 0) {
                                    ChaperoneTabController.applyChaperoneProfile(summaryChaperoneProfileComboBox.currentIndex - 1)
@@ -266,19 +266,19 @@ MyStackViewPage {
 
                    RowLayout {
                        MyText {
-                           text: "Tracking Universe:"
+                           text: "追踪空间:"
                        }
                        MyText {
                            id: summaryPlaySpaceModeText
                            Layout.fillWidth: true
                            horizontalAlignment: Text.AlignRight
-                           text: "Unknown"
+                           text: "未知"
                        }
                    }
 
                    RowLayout {
                        MyText {
-                           text: "HMD Rotations:"
+                           text: "头显旋转角度:"
                        }
                        MyText {
                            id: summaryHmdRotationsText
@@ -295,7 +295,7 @@ MyStackViewPage {
 
                    RowLayout {
                        MyText {
-                           text: "Dropped Frames:"
+                           text: "丢帧数:"
                        }
                        MyText {
                            id: summaryDroppedFramesText
@@ -307,7 +307,7 @@ MyStackViewPage {
 
                    RowLayout {
                        MyText {
-                           text: "Reprojected Frames:"
+                           text: "补帧数:"
                        }
                        MyText {
                            id: summaryReprojectedFramesText
@@ -319,7 +319,7 @@ MyStackViewPage {
 
                    RowLayout {
                        MyText {
-                           text: "Timed Out:"
+                           text: "超时次数:"
                        }
                        MyText {
                            id: summaryTimedOutText
@@ -331,7 +331,7 @@ MyStackViewPage {
 
                    RowLayout {
                        MyText {
-                           text: "Reprojection Ratio:"
+                           text: "补帧比例:"
                        }
                        MyText {
                            id: summaryTotalRatioText
@@ -350,7 +350,7 @@ MyStackViewPage {
 
                    RowLayout {
                        MyText {
-                           text: "Microphone:"
+                           text: "麦克风:"
                        }
                        MySlider {
                            id: summaryMicVolumeSlider
@@ -392,7 +392,7 @@ MyStackViewPage {
                    RowLayout {
                        MyToggleButton {
                            id: summaryPttToggle
-                           text: "Push-to-Talk"
+                           text: "按键说话"
                            onClicked: {
                                 AudioTabController.setPttEnabled(checked, true)
                            }
@@ -456,11 +456,11 @@ MyStackViewPage {
 
 
        if (MoveCenterTabController.trackingUniverse === 0) {
-           summaryPlaySpaceModeText.text = "Sitting"
+           summaryPlaySpaceModeText.text = "坐姿"
        } else if (MoveCenterTabController.trackingUniverse === 1) {
-           summaryPlaySpaceModeText.text = "Standing"
+           summaryPlaySpaceModeText.text = "站姿"
        } else {
-           summaryPlaySpaceModeText.text = "Unknown(" + MoveCenterTabController.trackingUniverse + ")"
+           summaryPlaySpaceModeText.text = "未知(" + MoveCenterTabController.trackingUniverse + ")"
        }
        updateStatistics()
        if (visible) {
@@ -532,11 +532,11 @@ MyStackViewPage {
        target: MoveCenterTabController
        onTrackingUniverseChanged: {
            if (MoveCenterTabController.trackingUniverse === 0) {
-               summaryPlaySpaceModeText.text = "Sitting"
+               summaryPlaySpaceModeText.text = "坐姿"
            } else if (MoveCenterTabController.trackingUniverse === 1) {
-               summaryPlaySpaceModeText.text = "Standing"
+               summaryPlaySpaceModeText.text = "站姿"
            } else {
-               summaryPlaySpaceModeText.text = "Unknown(" + MoveCenterTabController.trackingUniverse + ")"
+               summaryPlaySpaceModeText.text = "未知(" + MoveCenterTabController.trackingUniverse + ")"
            }
        }
    }
@@ -545,9 +545,9 @@ MyStackViewPage {
    function updateStatistics() {
        var rotations = StatisticsTabController.hmdRotations
        if (rotations > 0) {
-           summaryHmdRotationsText.text = rotations.toFixed(2) + " CCW"
+           summaryHmdRotationsText.text = rotations.toFixed(2) + " 逆时针"
        } else {
-           summaryHmdRotationsText.text = -rotations.toFixed(2) + " CW"
+           summaryHmdRotationsText.text = -rotations.toFixed(2) + " 顺时针"
        }
        summaryDroppedFramesText.text = StatisticsTabController.droppedFrames
        summaryReprojectedFramesText.text = StatisticsTabController.reprojectedFrames

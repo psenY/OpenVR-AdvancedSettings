@@ -6,7 +6,7 @@ import "../../common"
 
 MyDialogOkCancelPopup {
     id: audioNewProfileDialog
-    dialogTitle: "Create New Audio Profile"
+    dialogTitle: "新建音频配置文件"
     dialogWidth: 600
     dialogHeight: 300
     y: -300
@@ -17,7 +17,7 @@ MyDialogOkCancelPopup {
             Layout.leftMargin: 16
             Layout.rightMargin: 16
             MyText {
-                text: "Name: "
+                text: "名称: "
             }
             MyTextField {
                 id: audioNewProfileName
@@ -39,7 +39,7 @@ MyDialogOkCancelPopup {
             MyToggleButton {
                 id: audioDefaultProfileToggle
                 Layout.preferredWidth: 250
-                text: "Make Default"
+                text: "设为默认"
                 onCheckedChanged: {
                     AudioTabController.setAudioProfileDefault(checked, false)
                 }

@@ -9,7 +9,7 @@ ColumnLayout {
         MyToggleButton {
             id: audioPttEnabledToggle
             Layout.fillWidth: true
-            text: "Push-to-Talk:"
+            text: "按键说话"
             onClicked: {
                 AudioTabController.setPttEnabled(checked, true)
             }
@@ -17,7 +17,7 @@ ColumnLayout {
         MyToggleButton {
             id: audioPttShowNotificationToggle
             Layout.fillWidth: true
-            text: "Show notification in HMD"
+            text: "在头显中显示通知"
             onCheckedChanged: {
                 AudioTabController.setPttShowNotification(checked, false)
             }
@@ -25,7 +25,7 @@ ColumnLayout {
         MyToggleButton {
             id: audioPttReverseToggle
             Layout.fillWidth: true
-            text: "Push-to-Mute"
+            text: "按键静音"
             onClicked: {
                 AudioTabController.setMicReversePtt(checked, false)
             }

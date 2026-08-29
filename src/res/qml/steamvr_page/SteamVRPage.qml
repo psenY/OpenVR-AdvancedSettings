@@ -28,7 +28,7 @@ MyStackViewPage {
             Layout.fillWidth: true
 
             MyPushButton {
-                text: "Device Pairing Information"
+                text: "设备配对信息"
                 Layout.preferredWidth: 350
 
                 onClicked: {
@@ -42,7 +42,7 @@ MyStackViewPage {
 
             MyPushButton {
                 id: steamVRRestartButton
-                text: "Restart SteamVR"
+                text: "重启 SteamVR"
                 Layout.preferredWidth: 250
                 onClicked: {
                     SteamVRTabController.restartSteamVR()

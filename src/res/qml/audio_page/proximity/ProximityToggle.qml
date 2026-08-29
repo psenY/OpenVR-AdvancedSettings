@@ -7,7 +7,7 @@ import "../../common"
 MyToggleButton {
     id: audioMuteProximitySensorToggle
     Layout.preferredWidth: 600
-    text: "Proximity Sensor Mutes/Unmutes Microphone"
+    text: "接近传感器静音/取消静音麦克风"
     onClicked: {
         AudioTabController.setMicProximitySensorCanMute(checked, false)
     }

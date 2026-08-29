@@ -11,7 +11,7 @@ GroupBox {
 
     label: MyText {
         leftPadding: 10
-        text: "Chaperone Color"
+        text: "边界颜色"
         bottomPadding: -10
     }
     background: Rectangle {
@@ -33,7 +33,7 @@ GroupBox {
             RowLayout{
 
                 MyText {
-                    text: "Red:"
+                    text: "红:"
                     horizontalAlignment: Text.AlignRight
                     Layout.preferredWidth: 75
                 }
@@ -78,7 +78,7 @@ GroupBox {
                     Layout.preferredWidth: 200
                 }
                 MyText {
-                    text: "Green:"
+                    text: "绿:"
                     horizontalAlignment: Text.AlignRight
                     Layout.preferredWidth: 75
                 }
@@ -122,7 +122,7 @@ GroupBox {
             }
             RowLayout{
                 MyText {
-                    text: "Blue:"
+                    text: "蓝:"
                     horizontalAlignment: Text.AlignRight
                     Layout.preferredWidth: 75
                 }

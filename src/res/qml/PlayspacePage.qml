@@ -6,7 +6,7 @@ import "common"
 
 
 MyStackViewPage {
-    headerText: "Space Offsets"
+    headerText: "空间偏移"
 
     MyDialogOkPopup {
         id: offsetMessageDialog
@@ -20,8 +20,8 @@ MyStackViewPage {
     MyDialogOkCancelPopup {
         id: offsetDeleteProfileDialog
         property int profileIndex: -1
-        dialogTitle: "Delete Profile"
-        dialogText: "Do you really want to delete this profile?"
+        dialogTitle: "删除配置文件"
+        dialogText: "您确定要删除此配置文件吗？"
         onClosed: {
             if (okClicked) {
                 MoveCenterTabController.deleteOffsetProfile(profileIndex)
@@ -31,7 +31,7 @@ MyStackViewPage {
 
     MyDialogOkCancelPopup {
         id: offsetNewProfileDialog
-        dialogTitle: "Create New Profile"
+        dialogTitle: "新建配置文件"
         dialogWidth: 800
         dialogHeight: 400
         dialogContentItem: ColumnLayout {
@@ -40,7 +40,7 @@ MyStackViewPage {
                 Layout.leftMargin: 16
                 Layout.rightMargin: 16
                 MyText {
-                    text: "Name: "
+                    text: "名称: "
                 }
                 MyTextField {
                     id: offsetNewProfileName
@@ -76,13 +76,13 @@ MyStackViewPage {
 
         RowLayout {
             MyText {
-                text: "Tracking Universe:"
+                text: "追踪空间:"
                 Layout.preferredWidth: 230
             }
             MyText {
                 id: spaceModeText
                 font.bold: true
-                text: "Standing"
+                text: "站姿"
             }
         }
 
@@ -94,7 +94,7 @@ MyStackViewPage {
                 spacing: 18
 
                 MyText {
-                    text: "Profile:"
+                    text: "配置文件:"
                 }
 
                 MyComboBox {
@@ -119,7 +119,7 @@ MyStackViewPage {
                     id: offsetApplyProfileButton
                     enabled: false
                     Layout.preferredWidth: 200
-                    text: "Apply"
+                    text: "应用"
                     onClicked: {
                         if (offsetProfileComboBox.currentIndex > 0) {
                             MoveCenterTabController.applyOffsetProfile(offsetProfileComboBox.currentIndex - 1)
@@ -137,7 +137,7 @@ MyStackViewPage {
                     id: offsetDeleteProfileButton
                     enabled: false
                     Layout.preferredWidth: 200
-                    text: "Delete Profile"
+                    text: "删除配置文件"
                     onClicked: {
                         if (offsetProfileComboBox.currentIndex > 0) {
                             offsetDeleteProfileDialog.profileIndex = offsetProfileComboBox.currentIndex - 1
@@ -147,7 +147,7 @@ MyStackViewPage {
                 }
                 MyPushButton {
                     Layout.preferredWidth: 200
-                    text: "New Profile"
+                    text: "新建配置文件"
                     onClicked: {
                         offsetNewProfileDialog.openPopup()
                     }
@@ -162,7 +162,7 @@ MyStackViewPage {
 
             label: MyText {
                 leftPadding: 10
-                text: "Move Space"
+                text: "移动空间"
                 bottomPadding: -10
             }
             background: Rectangle {
@@ -184,7 +184,7 @@ MyStackViewPage {
                     columns: 6
 
                     MyText {
-                        text: "X-Axis (Left/Right):"
+                        text: "X 轴（左/右）:"
                         Layout.preferredWidth: 340
                     }
 
@@ -232,14 +232,14 @@ MyStackViewPage {
 
                     MyToggleButton {
                         id: lockXToggle
-                        text: "Lock X"
+                        text: "锁定 X 轴"
                         onCheckedChanged: {
                             MoveCenterTabController.lockXToggle = this.checked
                         }
                     }
 
                     MyText {
-                        text: "Y-Axis (Down/Up):"
+                        text: "Y 轴（上/下）:"
                         Layout.preferredWidth: 340
                     }
 
@@ -289,14 +289,14 @@ MyStackViewPage {
 
                     MyToggleButton {
                         id: lockYToggle
-                        text: "Lock Y"
+                        text: "锁定 Y 轴"
                         onCheckedChanged: {
                             MoveCenterTabController.lockYToggle = this.checked
                         }
                     }
 
                     MyText {
-                        text: "Z-Axis (Forth/Back):"
+                        text: "Z 轴（前/后）:"
                         Layout.preferredWidth: 340
                     }
 
@@ -343,7 +343,7 @@ MyStackViewPage {
 
                     MyToggleButton {
                         id: lockZToggle
-                        text: "Lock Z"
+                        text: "锁定 Z 轴"
                         onCheckedChanged: {
                             MoveCenterTabController.lockZToggle = this.checked
                         }
@@ -359,7 +359,7 @@ MyStackViewPage {
 
             label: MyText {
                 leftPadding: 10
-                text: "Rotate Space"
+                text: "旋转空间"
                 bottomPadding: -10
             }
             background: Rectangle {
@@ -444,7 +444,7 @@ MyStackViewPage {
                         MyPushButton {
                             id: spaceRotationApplyButton
                             Layout.preferredWidth: 145
-                            text:"Apply"
+                            text:"应用"
                             onClicked: {
                                 MoveCenterTabController.rotation = MoveCenterTabController.tempRotation
                             }
@@ -464,7 +464,7 @@ MyStackViewPage {
                 MyPushButton {
                     id: spaceResetButton
                     Layout.preferredWidth: 250
-                    text: "Reset"
+                    text: "重置"
                     onClicked: {
                         MoveCenterTabController.reset()
                     }
@@ -478,7 +478,7 @@ MyStackViewPage {
                     id: spaceLogMatrices
                     Layout.preferredWidth: 250
                     visible: MoveCenterTabController.showLogMatricesButton
-                    text: "Log Matrices"
+                    text: "打印矩阵日志"
                     onClicked: {
                         MoveCenterTabController.outputLogPoses()
                     }
@@ -488,7 +488,7 @@ MyStackViewPage {
                     id: spaceSeatedRecenter
                     Layout.preferredWidth: 250
                     visible: true
-                    text: "Re-center"
+                    text: "重新居中"
                     onClicked: {
                         MoveCenterTabController.sendSeatedRecenter()
                     }
@@ -512,12 +512,12 @@ MyStackViewPage {
             spaceLogMatrices.visible = MoveCenterTabController.showLogMatricesButton
 			
             if (MoveCenterTabController.trackingUniverse === 0) {
-                spaceModeText.text = "Sitting"
+                spaceModeText.text = "坐姿"
                 spaceSeatedRecenter.visible = true
             } else if (MoveCenterTabController.trackingUniverse === 1) {
-                spaceModeText.text = "Standing"
+                spaceModeText.text = "站姿"
             } else {
-                spaceModeText.text = "Unknown(" + MoveCenterTabController.trackingUniverse + ")"
+                spaceModeText.text = "未知(" + MoveCenterTabController.trackingUniverse + ")"
             }
             reloadOffsetProfiles()
         }
@@ -552,12 +552,12 @@ MyStackViewPage {
 			}
             onTrackingUniverseChanged: {
                 if (MoveCenterTabController.trackingUniverse === 0) {
-                    spaceModeText.text = "Sitting"
+                    spaceModeText.text = "坐姿"
                     spaceSeatedRecenter.visible = true
                 } else if (MoveCenterTabController.trackingUniverse === 1) {
-                    spaceModeText.text = "Standing"
+                    spaceModeText.text = "站姿"
                 } else {
-                    spaceModeText.text = "Unknown(" + MoveCenterTabController.trackingUniverse + ")"
+                    spaceModeText.text = "未知(" + MoveCenterTabController.trackingUniverse + ")"
                 }
             }
             onOffsetProfilesUpdated: {

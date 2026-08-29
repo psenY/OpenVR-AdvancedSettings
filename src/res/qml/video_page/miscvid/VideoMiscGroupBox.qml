@@ -10,7 +10,7 @@ GroupBox {
 
     label: MyText {
         leftPadding: 10
-        text: "Misc:"
+        text: "杂项:"
         bottomPadding: -10
     }
     background: Rectangle {
@@ -34,7 +34,7 @@ GroupBox {
 
             MyToggleButton {
                 id: videoMotionSmoothingToggle
-                text: "Motion Smoothing"
+                text: "动作平滑"
                 onCheckedChanged: {
                        VideoTabController.setMotionSmoothing(this.checked, false)
                 }
@@ -45,7 +45,7 @@ GroupBox {
 
             MyToggleButton {
                 id: videoAllowSupersampleFilteringToggle
-                text: "Advanced SS Filtering"
+                text: "高级超采样滤波"
                 onCheckedChanged: {
                     VideoTabController.setAllowSupersampleFiltering(this.checked, false)
                 }
@@ -56,7 +56,7 @@ GroupBox {
 
             MyToggleButton {
                 id: videoUseOverlayToggle
-                text: "Use Overlay For Color"
+                text: "使用叠加层调色"
                 onCheckedChanged: {
                     VideoTabController.setIsOverlayMethodActive(this.checked, true)
                 }

@@ -8,7 +8,7 @@ import "height_toggle"
 import "gravity"
 
 MyStackViewPage {
-    headerText: "Motion Settings"
+    headerText: "移动设置"
 
     content: ColumnLayout {
         spacing: 18

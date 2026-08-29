@@ -10,7 +10,7 @@ GroupBox {
     
     label: MyText {
         leftPadding: 10
-        text: "Keyboard Utilities"
+        text: "键盘工具"
         bottomPadding: -10
     }
     background: Rectangle {
@@ -30,7 +30,7 @@ GroupBox {
         
         
         MyText {
-            text: "Send to active application: "
+            text: "发送到当前应用: "
         }
         
         RowLayout {
@@ -38,7 +38,7 @@ GroupBox {
             Layout.fillWidth: true
             
             MyPushButton {
-                text: "Keyboard Input"
+                text: "键盘输入"
                 Layout.fillWidth: true
                 onClicked: {
                     OverlayController.showKeyboard("", 601)
@@ -54,7 +54,7 @@ GroupBox {
             }
             
             MyPushButton {
-                text: "Enter"
+                text: "回车"
                 Layout.fillWidth: true
                 onClicked: {
                     UtilitiesTabController.sendKeyboardEnter()
@@ -62,7 +62,7 @@ GroupBox {
             }
             
             MyPushButton {
-                text: "Alt-Tab"
+                text: "Alt + Tab"
                 Layout.fillWidth: true
                 onClicked: {
                     UtilitiesTabController.sendKeyboardAltTab()
@@ -70,7 +70,7 @@ GroupBox {
             }
             
             MyPushButton {
-                text: "Backspace"
+                text: "退格"
                 Layout.fillWidth: true
                 onClicked: {
                     UtilitiesTabController.sendKeyboardBackspace(1)
@@ -78,7 +78,7 @@ GroupBox {
             }
             
             MyPushButton {
-                text: "10x Backspace"
+                text: "退格 x10"
                 Layout.fillWidth: true
                 onClicked: {
                     UtilitiesTabController.sendKeyboardBackspace(10)
@@ -86,7 +86,7 @@ GroupBox {
             }
             
             MyPushButton {
-                text: "Alt-Enter"
+                text: "Alt + 回车"
                 Layout.fillWidth: true
                 onClicked: {
                     UtilitiesTabController.sendKeyboardAltEnter()
@@ -98,7 +98,7 @@ GroupBox {
             Layout.fillWidth: true
 
             MyPushButton {
-                text: "Ctrl-C"
+                text: "Ctrl + C"
                 Layout.preferredWidth: 150
                 onClicked: {
                     UtilitiesTabController.sendKeyboardCtrlC()
@@ -106,28 +106,28 @@ GroupBox {
             }
 
             MyPushButton {
-                text: "Ctrl-V"
+                text: "Ctrl + V"
                 Layout.preferredWidth: 150
                 onClicked: {
                     UtilitiesTabController.sendKeyboardCtrlV()
                 }
              }
             MyPushButton {
-                text: "Custom Key 1"
+                text: "自定义按键 1"
                 Layout.preferredWidth: 200
                 onClicked: {
                     UtilitiesTabController.sendKeyboardOne();
                 }
              }
             MyPushButton {
-                text: "Custom Key 2"
+                text: "自定义按键 2"
                 Layout.preferredWidth: 200
                 onClicked: {
                     UtilitiesTabController.sendKeyboardTwo();
                 }
              }
             MyPushButton {
-                text: "Custom Key 3"
+                text: "自定义按键 3"
                 Layout.preferredWidth: 200
                 onClicked: {
                     UtilitiesTabController.sendKeyboardThree();

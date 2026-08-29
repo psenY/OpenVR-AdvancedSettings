@@ -11,8 +11,8 @@ MyDialogOkCancelPopup {
     y: -200
     x: 0
     property int profileIndex: -1
-    dialogTitle: "Delete Profile"
-    dialogText: "Do you really want to delete this video profile?"
+    dialogTitle: "删除配置文件"
+    dialogText: "您确定要删除此配置文件吗？"
     onClosed: {
         if (okClicked) {
             VideoTabController.deleteVideoProfile(profileIndex)

@@ -6,7 +6,7 @@ import "common"
 
 
 MyStackViewPage {
-    headerText: "Statistics"
+    headerText: "统计"
 
     content: ColumnLayout {
         spacing: 18
@@ -15,7 +15,7 @@ MyStackViewPage {
             columns: 3
 
             MyText {
-                text: "HMD Distance Moved:"
+                text: "头显移动距离:"
             }
 
             MyText {
@@ -27,33 +27,33 @@ MyStackViewPage {
             }
 
             MyPushButton {
-                text: "Reset"
+                text: "重置"
                 onClicked: {
                     StatisticsTabController.statsDistanceResetClicked()
                 }
             }
 
             MyText {
-                text: "HMD Rotations:"
+                text: "头显旋转角度:"
             }
 
             MyText {
                 id: statsHmdRotationText
-                text: "0.0 CCW"
+                text: "0.0 逆时针"
                 Layout.fillWidth: true
                 horizontalAlignment: Text.AlignRight
                 Layout.rightMargin: 10
             }
 
             MyPushButton {
-                text: "Reset"
+                text: "重置"
                 onClicked: {
                     StatisticsTabController.statsRotationResetClicked()
                 }
             }
 
             MyText {
-                text: "Left Controller Max Speed:"
+                text: "左手控制器最大速度:"
             }
 
             MyText {
@@ -65,14 +65,14 @@ MyStackViewPage {
             }
 
             MyPushButton {
-                text: "Reset"
+                text: "重置"
                 onClicked: {
                     StatisticsTabController.statsLeftControllerSpeedResetClicked()
                 }
             }
 
             MyText {
-                text: "Right Controller Max Speed:"
+                text: "右手控制器最大速度:"
             }
 
             MyText {
@@ -84,7 +84,7 @@ MyStackViewPage {
             }
 
             MyPushButton {
-                text: "Reset"
+                text: "重置"
                 onClicked: {
                     StatisticsTabController.statsRightControllerSpeedResetClicked()
                 }
@@ -96,7 +96,7 @@ MyStackViewPage {
             Layout.topMargin: 32
 
             MyText {
-                text: "Presented Frames:"
+                text: "已呈现帧数:"
             }
 
             MyText {
@@ -108,14 +108,14 @@ MyStackViewPage {
             }
 
             MyPushButton {
-                text: "Reset"
+                text: "重置"
                 onClicked: {
                     StatisticsTabController.presentedFramesResetClicked()
                 }
             }
 
             MyText {
-                text: "Dropped Frames:"
+                text: "丢帧数:"
             }
 
             MyText {
@@ -127,14 +127,14 @@ MyStackViewPage {
             }
 
             MyPushButton {
-                text: "Reset"
+                text: "重置"
                 onClicked: {
                     StatisticsTabController.droppedFramesResetClicked()
                 }
             }
 
             MyText {
-                text: "Reprojected Frames:"
+                text: "补帧数:"
             }
 
             MyText {
@@ -146,14 +146,14 @@ MyStackViewPage {
             }
 
             MyPushButton {
-                text: "Reset"
+                text: "重置"
                 onClicked: {
                     StatisticsTabController.reprojectedFramesResetClicked()
                 }
             }
 
             MyText {
-                text: "Timed Out:"
+                text: "超时次数:"
             }
 
             MyText {
@@ -165,14 +165,14 @@ MyStackViewPage {
             }
 
             MyPushButton {
-                text: "Reset"
+                text: "重置"
                 onClicked: {
                     StatisticsTabController.timedOutResetClicked()
                 }
             }
 
             MyText {
-                text: "Reprojection Ratio:"
+                text: "补帧比例:"
             }
 
             MyText {
@@ -184,7 +184,7 @@ MyStackViewPage {
             }
 
             MyPushButton {
-                text: "Reset"
+                text: "重置"
                 onClicked: {
                     StatisticsTabController.totalRatioResetClicked()
                 }
@@ -198,9 +198,9 @@ MyStackViewPage {
             statsHmdMovedText.text = StatisticsTabController.hmdDistanceMoved.toFixed(1) + " m"
             var rotations = StatisticsTabController.hmdRotations
             if (rotations > 0) {
-                statsHmdRotationText.text = rotations.toFixed(2) + " CCW"
+                statsHmdRotationText.text = rotations.toFixed(2) + " 逆时针"
             } else {
-                statsHmdRotationText.text = -rotations.toFixed(2) + " CW"
+                statsHmdRotationText.text = -rotations.toFixed(2) + " 顺时针"
             }
             statsLeftControllerSpeedText.text = "    " + StatisticsTabController.leftControllerMaxSpeed.toFixed(1) + " m/s"
             statsRightControllerSpeedText.text = "    " + StatisticsTabController.rightControllerMaxSpeed.toFixed(1) + " m/s"

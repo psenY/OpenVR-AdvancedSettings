@@ -10,7 +10,7 @@ GroupBox {
 
     label: MyText {
         leftPadding: 10
-        text: "Height Toggle / Gravity Floor Offset"
+        text: "高度切换 / 重力地面偏移"
         bottomPadding: -10
     }
     background: Rectangle {
@@ -34,7 +34,7 @@ GroupBox {
 
             MyToggleButton {
                 id: heightToggleButton
-                text: "On"
+                text: "启用"
                 onCheckedChanged: {
                     MoveCenterTabController.heightToggle = this.checked
                 }
@@ -45,7 +45,7 @@ GroupBox {
             }
 
             MyText {
-                text: "Height Offset (+ is down):"
+                text: "高度偏移（正值向下）:"
                 horizontalAlignment: Text.AlignRight
                 Layout.rightMargin: 2
             }
@@ -72,7 +72,7 @@ GroupBox {
             MyPushButton {
                 id: heightOffsetFromYOffsetButton
                 Layout.preferredWidth: 230
-                text:"Set From Y-Offset"
+                text:"从 Y 偏移设置"
                 onClicked: {
                     MoveCenterTabController.heightToggleOffset = MoveCenterTabController.offsetY
                 }

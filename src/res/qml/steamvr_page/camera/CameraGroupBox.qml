@@ -10,7 +10,7 @@ GroupBox {
 
     label: MyText {
         leftPadding: 10
-        text: "Camera: (requires SteamVR restart)"
+        text: "摄像头:（需要重启 SteamVR）"
         bottomPadding: -10
     }
     background: Rectangle {
@@ -34,7 +34,7 @@ GroupBox {
 
             MyToggleButton {
                 id: steamvrCameraActiveToggle
-                text: "Enable Camera"
+                text: "启用摄像头"
                 Layout.preferredWidth: 400
                 onCheckedChanged: {
                        SteamVRTabController.setCameraActive(this.checked, false)
@@ -55,7 +55,7 @@ GroupBox {
 
             MyToggleButton {
                 id: steamvrCameraBoundsToggle
-                text: "Show camera on bounds collision"
+                text: "边界碰撞时显示摄像头"
                 Layout.preferredWidth: 400
                 onCheckedChanged: {
                        SteamVRTabController.setCameraBounds(this.checked, false)
@@ -67,7 +67,7 @@ GroupBox {
 
             MyToggleButton {
                 id: steamvrCameraContToggle
-                text: "Show camera on controller"
+                text: "在控制器上显示摄像头"
                 onCheckedChanged: {
                     SteamVRTabController.setCameraCont(this.checked, false)
                 }

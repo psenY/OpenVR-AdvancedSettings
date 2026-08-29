@@ -24,7 +24,7 @@ ColumnLayout {
 
         MyText {
             Layout.preferredWidth: 150
-            text: "Audio Profile:"
+            text: "音频配置文件:"
             visible: false
         }
 
@@ -50,7 +50,7 @@ ColumnLayout {
             enabled: false
             visible: false
             Layout.preferredWidth: 150
-            text: "Apply"
+            text: "应用"
             onClicked: {
                 if (audioProfileComboBox.currentIndex > 0) {
                     AudioTabController.applyAudioProfile(
@@ -60,7 +60,7 @@ ColumnLayout {
         }
         MyText {
             // Text continues in next RowLayout.
-            text: "Change the Push To Talk settings"
+            text: "在 SteamVR 按键绑定菜单"
         }
     }
     RowLayout {
@@ -71,7 +71,7 @@ ColumnLayout {
             enabled: false
             visible: false
             Layout.preferredWidth: 200
-            text: "Delete Profile"
+            text: "删除配置文件"
             onClicked: {
                 if (audioProfileComboBox.currentIndex > 0) {
                     audioDeleteProfileDialog.profileIndex = audioProfileComboBox.currentIndex - 1
@@ -83,14 +83,14 @@ ColumnLayout {
             enabled: false
             visible: false
             Layout.preferredWidth: 200
-            text: "New Profile"
+            text: "新建配置文件"
             onClicked: {
                 audioNewProfileDialog.openPopup()
             }
         }
         MyText {
             // Text continues from RowLayout above.
-            text: "\t\tin the SteamVR bindings menu."
+            text: "\t\t中修改按键说话设置"
         }
     }
     Component.onCompleted: {

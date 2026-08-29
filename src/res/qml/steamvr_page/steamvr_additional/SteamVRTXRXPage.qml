@@ -19,7 +19,7 @@ MyStackViewPage {
             DT: "Dongle Type"
         }
     }
-    headerText: "Device Pairing Information"
+    headerText: "设备配对信息"
     content:
         ColumnLayout {
                 spacing: 10
@@ -27,19 +27,19 @@ MyStackViewPage {
                 Layout.fillHeight: true
                 RowLayout{
                     MyText{
-                        text: "Status: "
+                        text: "状态: "
                         Layout.preferredWidth: 200
                     }
                     MyText{
                         id: statusText
-                        text: "Ready to Pair"
+                        text: "准备配对"
                         Layout.fillWidth: true
                     }
                 }
 
                 RowLayout{
                     MyText{
-                        text: "dongles used: "
+                        text: "已使用的加密狗: "
                         Layout.preferredWidth: 200
                     }
                     MyText{
@@ -53,7 +53,7 @@ MyStackViewPage {
                     }
                     MyPushButton{
                         Layout.preferredWidth: 250
-                        text: "Refresh Device List"
+                        text: "刷新设备列表"
                         id: searchButton
                         onClicked: {
                             getRXTX()
@@ -62,7 +62,7 @@ MyStackViewPage {
                 }
                 RowLayout{
                     MyText{
-                        text: "Instructions: Set Device to pairing mode and then hit pair on desired un-connected Dongle. To pair to a currently used dongle turn-off the attached device and refresh the list"
+                        text: "操作说明：将设备设置为配对模式，然后点击所需未连接的加密狗进行配对。若要与当前已使用的加密狗配对，请先关闭已连接设备并刷新列表。"
                         Layout.fillWidth: true
                         wrapMode: Text.WordWrap
                     }
@@ -91,7 +91,7 @@ MyStackViewPage {
                                 label: RowLayout{
                                     MyText {
                                         leftPadding: 10
-                                        text: "Device: "
+                                        text: "设备: "
                                         bottomPadding: -10
                                     }
                                     MyText {
@@ -120,7 +120,7 @@ MyStackViewPage {
                                         clip: true
                                         MyText{
                                             Layout.preferredWidth: 150
-                                            text: "Device ID: "
+                                            text: "设备 ID: "
                                         }
                                         MyText{
                                             Layout.preferredWidth: 250
@@ -132,7 +132,7 @@ MyStackViewPage {
                                         }
                                         MyText{
                                             Layout.preferredWidth: 300
-                                            text: "Connected Dongle Type: "
+                                            text: "已连接加密狗类型: "
                                         }
                                         MyText{
                                             Layout.preferredWidth: 250
@@ -146,7 +146,7 @@ MyStackViewPage {
                                         clip: true
                                         MyPushButton{
                                             Layout.preferredWidth: 200
-                                            text: "Pair"
+                                            text: "配对"
                                             id: pairBtn
                                             onClicked: {
                                                 SteamVRTabController.pairDevice(rxtext.text)
@@ -163,7 +163,7 @@ MyStackViewPage {
                                         }
                                         MyText{
                                             Layout.preferredWidth: 150
-                                            text: "Dongle ID: "
+                                            text: "加密狗 ID: "
                                         }
                                         MyText{
                                             Layout.preferredWidth: 250
