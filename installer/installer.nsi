@@ -19,7 +19,10 @@
     
 	;Name and file
 	Name "OpenVR Advanced Settings"
-        OutFile "AdvancedSettings-${VERSION_STRING}-Installer.exe"
+        !ifndef BUILD_SUFFIX
+          !define BUILD_SUFFIX ""
+        !endif
+        OutFile "AdvancedSettings-${VERSION_STRING}-${BUILD_SUFFIX}Installer.exe"
 	
 	;Default installation folder
 	InstallDir "$PROGRAMFILES64\OpenVR-AdvancedSettings"
