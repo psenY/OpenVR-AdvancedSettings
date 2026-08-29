@@ -6,7 +6,7 @@ import "common"
 
 
 MyStackViewPage {
-    headerText: "Space Fix"
+    headerText: "空间修正"
 
     content: ColumnLayout {
         spacing: 18
@@ -17,7 +17,7 @@ MyStackViewPage {
         }
 
         MyText {
-            text: "Place one controller on the ground and ensure good visibility to the base stations."
+            text: "将一个控制器放在地面上，并确保在基站可见范围内。"
             wrapMode: Text.WordWrap
             font.pointSize: 28
             horizontalAlignment: Text.AlignHCenter
@@ -26,7 +26,7 @@ MyStackViewPage {
         }
 
         MyText {
-            text: "(Disabled in 'Seated' Universe Type)"
+            text: "（坐姿模式下不可用）"
             id: seatedWarningText
             visible: false
             wrapMode: Text.WordWrap
@@ -58,7 +58,7 @@ MyStackViewPage {
         MyPushButton {
             id: fixButton
             Layout.fillWidth: true
-            text: "Fix Floor"
+            text: "修正地面"
             Layout.preferredHeight: 80
             onClicked: {
                 FixFloorTabController.fixFloorClicked()
@@ -68,7 +68,7 @@ MyStackViewPage {
 		MyPushButton {
             id: recenterButton
             Layout.fillWidth: true
-            text: "Recenter Space"
+            text: "重新居中"
             Layout.preferredHeight: 80
             onClicked: {
                 FixFloorTabController.recenterClicked()
@@ -81,7 +81,7 @@ MyStackViewPage {
             // TODO re-enable undo and remove visible: false
             visible: false
             Layout.fillWidth: true
-            text: "Undo Fix"
+            text: "撤销修正"
             onClicked: {
                 FixFloorTabController.undoFixFloorClicked()
             }
@@ -90,7 +90,7 @@ MyStackViewPage {
         MyPushButton {
             id: zeroSpaceButton
             Layout.fillWidth: true
-            text: "Apply Space Settings Offsets as Center"
+            text: "将空间偏移设为中心"
             Layout.preferredHeight: 80
             onClicked: {
                 MoveCenterTabController.addCurOffsetAsCenter()
@@ -104,7 +104,7 @@ MyStackViewPage {
         MyPushButton {
             id: revertButton
             Layout.fillWidth: true
-            text: "Revert All Changes from This Session"
+            text: "恢复本次会话的所有更改"
             Layout.preferredHeight: 80
             onClicked: {
                 ChaperoneTabController.applyAutosavedProfile()
@@ -166,14 +166,14 @@ MyStackViewPage {
         Connections {
             target: MoveCenterTabController
             onTrackingUniverseChanged: {
-                // if (MoveCenterTabController.trackingUniverse === 0) {
-                //     fixButton.enabled = false
-                //     recenterButton.enabled = false
-                //     zeroSpaceButton.enabled = false
-                //     revertButton.enabled = false
-                //     undoFixButton.enabled = false
-                //     seatedWarningText.visible = true
-                // } else if (MoveCenterTabController.trackingUniverse === 1) {
+                if (MoveCenterTabController.trackingUniverse === 0) {
+                    fixButton.enabled = false
+                    recenterButton.enabled = false
+                    zeroSpaceButton.enabled = false
+                    revertButton.enabled = false
+                    undoFixButton.enabled = false
+                    seatedWarningText.visible = true
+                } else if (MoveCenterTabController.trackingUniverse === 1) {
                     fixButton.enabled = true
                     recenterButton.enabled = true
                     zeroSpaceButton.enabled = true
@@ -181,14 +181,14 @@ MyStackViewPage {
                     // undoFixButton.enabled = true
                     // TODO Fix Undo Feature -^
                     seatedWarningText.visible = false
-                // } else {
-                //     fixButton.enabled = false
-                //     recenterButton.enabled = false
-                //     zeroSpaceButton.enabled = false
-                //     revertButton.enabled = false
-                //     undoFixButton.enabled = false
-                //     seatedWarningText.visible = false
-                // }
+                } else {
+                    fixButton.enabled = false
+                    recenterButton.enabled = false
+                    zeroSpaceButton.enabled = false
+                    revertButton.enabled = false
+                    undoFixButton.enabled = false
+                    seatedWarningText.visible = false
+                }
             }
         }
 

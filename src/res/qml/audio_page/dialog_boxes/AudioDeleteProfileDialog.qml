@@ -11,8 +11,8 @@ MyDialogOkCancelPopup {
     y: -300
     x: 100
     property int profileIndex: -1
-    dialogTitle: "Delete Profile"
-    dialogText: "Do you really want to delete this audio profile?"
+    dialogTitle: "删除配置文件"
+    dialogText: "您确定要删除此配置文件吗？"
     onClosed: {
         if (okClicked) {
             AudioTabController.deleteAudioProfile(profileIndex)

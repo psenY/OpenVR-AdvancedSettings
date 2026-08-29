@@ -6,7 +6,7 @@ import "../../common"
 
 MyDialogOkCancelPopup {
     id: videoNewProfileDialog
-    dialogTitle: "Create New Video Profile"
+    dialogTitle: "新建视频配置文件"
     dialogWidth: 600
     dialogHeight: 300
     y: -200
@@ -17,7 +17,7 @@ MyDialogOkCancelPopup {
             Layout.leftMargin: 16
             Layout.rightMargin: 16
             MyText {
-                text: "Name: "
+                text: "名称: "
             }
             MyTextField {
                 id: videoNewProfileName

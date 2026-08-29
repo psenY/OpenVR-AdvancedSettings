@@ -11,7 +11,7 @@ GroupBox {
 
     label: MyText {
         leftPadding: 10
-        text: "Chaperone Style"
+        text: "边界样式"
         bottomPadding: -10
     }
     background: Rectangle {
@@ -35,7 +35,7 @@ GroupBox {
                 exclusive: true}
                 MyRadioButton {
                     id: denseRadio
-                    text: qsTr("Dense")
+                    text: qsTr("密集")
                     ButtonGroup.group: chaperoneTypeExclGroup
                     Layout.preferredWidth: 200
                     onCheckedChanged: {
@@ -47,7 +47,7 @@ GroupBox {
                 }
                 MyRadioButton {
                     id: medRadio
-                    text: qsTr("Med")
+                    text: qsTr("中等")
                     ButtonGroup.group: chaperoneTypeExclGroup
                     Layout.preferredWidth: 200
                     onCheckedChanged: {
@@ -59,7 +59,7 @@ GroupBox {
                 }
                 MyRadioButton {
                     id: squaresRadio
-                    text: qsTr("Squares")
+                    text: qsTr("方格")
                     ButtonGroup.group: chaperoneTypeExclGroup
                     Layout.preferredWidth: 200
                     onCheckedChanged: {
@@ -71,7 +71,7 @@ GroupBox {
                 }
                 MyRadioButton {
                     id: sparseRadio
-                    text: qsTr("Sparse")
+                    text: qsTr("稀疏")
                     ButtonGroup.group: chaperoneTypeExclGroup
                     Layout.preferredWidth: 200
                     onCheckedChanged: {
@@ -83,7 +83,7 @@ GroupBox {
                 }
                 MyRadioButton {
                     id: floorRadio
-                    text: qsTr("Floor Only")
+                    text: qsTr("仅地面")
                     ButtonGroup.group: chaperoneTypeExclGroup
                     Layout.preferredWidth: 200
                     onCheckedChanged: {

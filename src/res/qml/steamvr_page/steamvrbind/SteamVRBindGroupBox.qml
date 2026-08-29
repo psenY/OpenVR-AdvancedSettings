@@ -11,7 +11,7 @@ GroupBox {
     label:
         MyText {
         leftPadding: 10
-        text: "Binds:"
+        text: "绑定:"
         bottomPadding: -10
         }
 
@@ -37,7 +37,7 @@ GroupBox {
 
             MyToggleButton {
                 id: steamvrBindingToggle
-                text: "Enable Per-App"
+                text: "启用按应用设置"
                 Layout.preferredWidth: 250
                 onCheckedChanged: {
                     SteamVRTabController.setPerAppBindEnabled(this.checked, false)
@@ -58,7 +58,7 @@ GroupBox {
             }
 
             MyText {
-                text: "Application: "
+                text: "应用程序: "
                 Layout.preferredWidth: 150
                 horizontalAlignment: Text.AlignRight
                 Layout.rightMargin: 2
@@ -78,7 +78,7 @@ GroupBox {
             MyPushButton {
                 id: bindingsButton
                 activationSoundEnabled: false
-                text: "Open Bindings"
+                text: "打开按键绑定"
                 Layout.preferredWidth: 180
                 onClicked: {
                      SteamVRTabController.launchBindingUI()
@@ -88,14 +88,14 @@ GroupBox {
         RowLayout {
             spacing: 16
             MyText {
-                text: "Save Current Binding of Selected App: "
+                text: "保存所选应用当前绑定: "
                 Layout.preferredWidth: 500
                 horizontalAlignment: Text.AlignLeft
                 Layout.rightMargin: 2
             }
             MyPushButton {
                     id: setBinding
-                    text:"For Current Game"
+                    text:"仅用于当前游戏"
                     onClicked: {
                         SteamVRTabController.setBindingQMLWrapper(appSelect.text)
                     }
@@ -106,7 +106,7 @@ GroupBox {
             }
             MyPushButton {
                     id: setDefaultBtn
-                    text:"As Default"
+                    text:"设为默认绑定"
                     onClicked: {
                         SteamVRTabController.setBindingQMLWrapper(appSelect.text,true)
                     }

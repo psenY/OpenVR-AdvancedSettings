@@ -10,7 +10,7 @@ GroupBox {
 
     label: MyText {
         leftPadding: 10
-        text: "Media Control Keys"
+        text: "媒体控制键"
         bottomPadding: -10
     }
     background: Rectangle {

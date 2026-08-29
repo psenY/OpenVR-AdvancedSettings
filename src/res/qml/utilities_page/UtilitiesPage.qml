@@ -9,7 +9,7 @@ import "../common"
 import "misc"
 
 MyStackViewPage {
-    headerText: "Utilities"
+    headerText: "工具"
 
     content: ColumnLayout {
         spacing: 18

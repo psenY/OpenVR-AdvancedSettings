@@ -10,7 +10,7 @@ GroupBox {
 
     label: MyText {
         leftPadding: 10
-        text: "Auto-Turn (for discrete redirected walking)"
+        text: "自动转向（用于离散重定向行走）"
         bottomPadding: -12
     }
     background: Rectangle {
@@ -34,14 +34,14 @@ GroupBox {
 
             MyToggleButton {
                 id: autoTurn
-                text: "Toggle On/Off"
+                text: "开关切换"
                 Layout.preferredWidth: 250
                 onCheckedChanged: {
                     RotationTabController.setAutoTurnEnabled(this.checked, true);                }
             }
             MyToggleButton {
                 id: autoTurnNotificationToggle
-                text: "HMD Icon"
+                text: "头显图标"
                 Layout.preferredWidth: 175
                 onCheckedChanged: {
                 RotationTabController.setAutoTurnShowNotification(this.checked, true)
@@ -49,7 +49,7 @@ GroupBox {
             }
 
             MyText {
-                text: "Activation Dist:"
+                text: "激活距离:"
                 horizontalAlignment: Text.AlignRight
                 Layout.rightMargin: 10
                 Layout.preferredWidth: 215
@@ -98,7 +98,7 @@ GroupBox {
 
             MyToggleButton {
                 id: cornerAngle
-                text: "Use Corner Angle"
+                text: "使用拐角角度"
                 Layout.preferredWidth: 300
                 onCheckedChanged: {
                     RotationTabController.setAutoTurnUseCornerAngle(this.checked, true);
@@ -106,7 +106,7 @@ GroupBox {
             }
 
             MyText {
-                text: "Deactivation Dist:"
+                text: "停用距离:"
                 horizontalAlignment: Text.AlignRight
                 Layout.rightMargin: 10
                 Layout.preferredWidth: 215
@@ -154,7 +154,7 @@ GroupBox {
         RowLayout {
             MyToggleButton {
                 id: autoTurnModeToggle
-                text: "Use Smooth Turn"
+                text: "使用平滑转向"
                 Layout.preferredWidth: 300
                 onCheckedChanged: {
                     if(this.checked){
@@ -168,7 +168,7 @@ GroupBox {
             }
 
             MyText {
-                text: "Turn Speed(deg/sec):"
+                text: "转向速度（度/秒）:"
                 horizontalAlignment: Text.AlignRight
                 Layout.rightMargin: 10
             }
@@ -220,14 +220,14 @@ GroupBox {
       RowLayout{
 
           MyText{
-              text: "Detangle Angle: "
+              text: "解缠角度: "
               horizontalAlignment: Text.AlignLeft
               Layout.preferredWidth: 200
               Layout.rightMargin: 5
 
           }
           MyText{
-              text:"Min Rotations:"
+              text:"最小旋转次数:"
               Layout.rightMargin: 5
 
           }
@@ -257,7 +257,7 @@ GroupBox {
           }
 
           MyText{
-              text: "Max Wall Angle: "
+              text: "最大墙面角度: "
               horizontalAlignment: Text.AlignRight
               Layout.rightMargin: 10
               Layout.fillWidth: true

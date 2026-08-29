@@ -11,7 +11,7 @@ GroupBox {
     label:
         MyText {
         leftPadding: 10
-        text: "Misc:"
+        text: "杂项:"
         bottomPadding: -10
         }
 
@@ -37,7 +37,7 @@ GroupBox {
 
             MyToggleButton {
                 id: trackerOvlToggle
-                text: "Show Tracker Batteries"
+                text: "显示追踪器电量"
                 Layout.preferredWidth: 250
                 onCheckedChanged: {
                     UtilitiesTabController.setTrackerOvlEnabled(this.checked, false)

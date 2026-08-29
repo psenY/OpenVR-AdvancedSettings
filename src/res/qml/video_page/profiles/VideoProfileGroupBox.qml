@@ -22,7 +22,7 @@ GroupBox {
 
     label: MyText {
         leftPadding: 10
-        text: "Video Profiles:"
+        text: "视频配置文件:"
         bottomPadding: -10
     }
     background: Rectangle {
@@ -44,7 +44,7 @@ GroupBox {
 
             MyText {
                 Layout.preferredWidth: 150
-                text: "Profile:  "
+                text: "配置文件:  "
             }
 
             MyComboBox {
@@ -66,7 +66,7 @@ GroupBox {
                 id: videoApplyProfileButton
                 enabled: true
                 Layout.preferredWidth: 150
-                text: "Apply"
+                text: "应用"
                 onClicked: {
                     if (videoProfileComboBox.currentIndex > 0) {
                         VideoTabController.applyVideoProfile(
@@ -86,7 +86,7 @@ GroupBox {
                 enabled: true
                 Layout.preferredWidth: 200
 
-                text: "Delete Profile"
+                text: "删除配置文件"
                 onClicked: {
                     if (videoProfileComboBox.currentIndex > 0) {
                         videoDeleteProfileDialog.profileIndex = videoProfileComboBox.currentIndex - 1
@@ -96,7 +96,7 @@ GroupBox {
             }
             MyPushButton {
                 Layout.preferredWidth: 200
-                text: "New Profile"
+                text: "新建配置文件"
                 onClicked: {
                     videoNewProfileDialog.openPopup()
                 }

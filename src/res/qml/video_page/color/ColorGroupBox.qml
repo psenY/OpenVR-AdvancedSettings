@@ -10,7 +10,7 @@ GroupBox {
 
     label: MyText {
         leftPadding: 10
-        text: "Color Adjustment"
+        text: "颜色调整"
         bottomPadding: -10
     }
     background: Rectangle {
@@ -33,7 +33,7 @@ GroupBox {
             Layout.fillWidth: true
 
             MyText {
-                text: "Red:"
+                text: "红:"
                 horizontalAlignment: Text.AlignRight
                 Layout.preferredWidth: 75
             }
@@ -81,7 +81,7 @@ GroupBox {
                 }
             }
             MyText {
-                text: "Green:"
+                text: "绿:"
                 horizontalAlignment: Text.AlignRight
                 Layout.preferredWidth: 85
             }
@@ -130,7 +130,7 @@ GroupBox {
             }
 
                 MyText {
-                    text: "Blue:"
+                    text: "蓝:"
                     horizontalAlignment: Text.AlignRight
                     Layout.preferredWidth: 75
                 }

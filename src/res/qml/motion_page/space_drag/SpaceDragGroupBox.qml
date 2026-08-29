@@ -10,7 +10,7 @@ GroupBox {
 
     label: MyText {
         leftPadding: 10
-        text: "Space Drag"
+        text: "空间拖拽"
         bottomPadding: -10
     }
     background: Rectangle {
@@ -34,7 +34,7 @@ GroupBox {
 
             MyToggleButton {
                 id: moveShortcutLeft
-                text: "Left Hand"
+                text: "左手"
                 onCheckedChanged: {
                     MoveCenterTabController.moveShortcutLeft = this.checked
                 }
@@ -42,7 +42,7 @@ GroupBox {
 
             MyToggleButton {
                 id: moveShortcutRight
-                text: "Right Hand"
+                text: "右手"
                 onCheckedChanged: {
                     MoveCenterTabController.moveShortcutRight = this.checked
                 }
@@ -53,7 +53,7 @@ GroupBox {
             }
 
             MyText {
-                text: "Comfort Mode:"
+                text: "舒适模式:"
                 horizontalAlignment: Text.AlignRight
                 Layout.rightMargin: 10
             }
@@ -82,7 +82,7 @@ GroupBox {
 
             MyToggleButton {
                 id: dragBounds
-                text: "Force Bounds"
+                text: "强制边界"
                 onCheckedChanged: {
                     MoveCenterTabController.dragBounds = this.checked
                 }
@@ -95,7 +95,7 @@ GroupBox {
             }
 
             MyText {
-                text: "Drag Multiplier:"
+                text: "拖拽倍率:"
                 horizontalAlignment: Text.AlignRight
                 Layout.rightMargin: 2
             }

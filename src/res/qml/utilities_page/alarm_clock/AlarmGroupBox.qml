@@ -10,7 +10,7 @@ GroupBox {
     
     label: MyText {
         leftPadding: 10
-        text: "Alarm Clock"
+        text: "闹钟"
         bottomPadding: -10
     }
     background: Rectangle {
@@ -30,7 +30,7 @@ GroupBox {
             RowLayout {
                 MyToggleButton {
                     id: alarmClockToggle
-                    text: "Alarm"
+                    text: "闹铃"
 
                     Layout.preferredWidth: parent.parent.parent.activationButtonWidth
                     onCheckedChanged: {
@@ -51,7 +51,7 @@ GroupBox {
 
                 MyPushButton2 {
                     Layout.preferredWidth: 170
-                    text: "Current Time"
+                    text: "当前时间"
                     onClicked: {
                         VrAlarm.setAlarmTimeToCurrentTime()
                         alarmClockTimeAssembly.changeTimer(VrAlarm.getAlarmHour(),
@@ -62,7 +62,7 @@ GroupBox {
 
                 MyPushButton2 {
                     Layout.preferredWidth: 120
-                    text: "+1 Hour"
+                    text: "+1 小时"
                     onClicked: {
                         VrAlarm.modAlarmTime(1, 0, 0)
                     }
@@ -70,14 +70,14 @@ GroupBox {
 
                 MyPushButton2 {
                     Layout.preferredWidth: 120
-                    text: "-1 Hour"
+                    text: "-1 小时"
                     onClicked: {
                         VrAlarm.modAlarmTime(-1, 0, 0)
                     }
                 }
 
                 MyPushButton2 {
-                    text: "+5 Min"
+                    text: "+5 分钟"
                     Layout.preferredWidth: 110
                     onClicked: {
                         VrAlarm.modAlarmTime(0, 5, 0)
@@ -86,7 +86,7 @@ GroupBox {
 
                 MyPushButton2 {
                     Layout.preferredWidth: 110
-                    text: "-5 Min"
+                    text: "-5 分钟"
                     onClicked: {
                         VrAlarm.modAlarmTime(0, -5, 0)
                     }

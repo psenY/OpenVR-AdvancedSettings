@@ -10,7 +10,7 @@ GroupBox {
 
     label: MyText {
         leftPadding: 10
-        text: "Space Turn (for manual redirected walking)"
+        text: "空间旋转（用于手动重定向行走）"
         bottomPadding: -12
     }
     background: Rectangle {
@@ -34,7 +34,7 @@ GroupBox {
 
             MyToggleButton {
                 id: turnBindLeft
-                text: "Left Hand"
+                text: "左手"
                 onCheckedChanged: {
                     MoveCenterTabController.turnBindLeft = this.checked
                 }
@@ -42,7 +42,7 @@ GroupBox {
 
             MyToggleButton {
                 id: turnBindRight
-                text: "Right Hand"
+                text: "右手"
                 onCheckedChanged: {
                     MoveCenterTabController.turnBindRight = this.checked
                 }
@@ -53,7 +53,7 @@ GroupBox {
             }
 
             MyText {
-                text: "Comfort Mode:"
+                text: "舒适模式:"
                 horizontalAlignment: Text.AlignRight
                 Layout.rightMargin: 10
             }
@@ -82,7 +82,7 @@ GroupBox {
 
             MyToggleButton {
                 id: turnBounds
-                text: "Force Bounds"
+                text: "强制边界"
                 onCheckedChanged: {
                     MoveCenterTabController.turnBounds = this.checked
                 }
