@@ -19,7 +19,6 @@ jobs:
         with:
           version: '5.15.2'
           arch: 'win64_msvc2019_64'
-          modules: 'qtmultimedia qtwebsockets qtsvg qtquickcontrols2 qtremoteobjects'
           cache: true
 
       - name: Set up MSVC
