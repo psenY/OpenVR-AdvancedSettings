@@ -1,0 +1,45 @@
+name: build-windows
+
+# 手动触发 / 推送到本分支时构建 Windows 便携版
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - fix-d3d11-overlay
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install Qt 5.15.2 (msvc2019_64)
+        uses: jurplel/install-qt-action@v4
+        with:
+          version: '5.15.2'
+          arch: 'win64_msvc2019_64'
+          modules: 'qtmultimedia qtwebsockets qtsvg qtquickcontrols2 qtremoteobjects'
+          cache: true
+
+      - name: Set up MSVC
+        uses: ilammy/msvc-dev-cmd@v1
+        with:
+          arch: x64
+
+      - name: qmake + nmake (release)
+        shell: cmd
+        run: |
+          qmake advancedSettings.pro -spec win32-msvc CONFIG+=X86_64 CONFIG+=release
+          nmake
+
+      - name: List output
+        shell: cmd
+        run: dir bin\win64\AdvancedSettings
+
+      - name: Upload portable build
+        uses: actions/upload-artifact@v4
+        with:
+          name: AdvancedSettings-win64-d3d11
+          path: bin/win64/**
+          if-no-files-found: error
