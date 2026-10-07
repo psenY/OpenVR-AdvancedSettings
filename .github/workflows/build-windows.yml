@@ -5,7 +5,7 @@ on:
   workflow_dispatch:
   push:
     branches:
-      - fix-d3d11-overlay
+      - build-C-old-sdk
 
 jobs:
   build:
