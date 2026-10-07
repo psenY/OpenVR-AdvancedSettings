@@ -21,7 +21,6 @@ SOURCES += src/main.cpp\
     src/utils/setup.cpp \
     src/utils/paths.cpp \
     src/utils/FrameRateUtils.cpp \
-    src/utils/d3d11_overlay.cpp \
     src/keyboard_input/keyboard_input.cpp \
     src/keyboard_input/input_parser.cpp \
     src/settings/settings.cpp \
@@ -76,15 +75,16 @@ HEADERS += src/overlaycontroller.h \
     src/settings/internal/settings_object_data.h \
     src/settings/internal/settings_object_data.h \
     src/utils/update_rate.h \
-    src/utils/d3d11_overlay.h \
     src/translations/translations.h \
 
 
 win32 {
     SOURCES += src/tabcontrollers/audiomanager/AudioManagerWindows.cpp \
         src/keyboard_input/input_sender_win.cpp \
-        src/media_keys/media_keys_win.cpp
-    HEADERS += src/tabcontrollers/audiomanager/AudioManagerWindows.h
+        src/media_keys/media_keys_win.cpp \
+        src/utils/d3d11_overlay.cpp
+    HEADERS += src/tabcontrollers/audiomanager/AudioManagerWindows.h \
+        src/utils/d3d11_overlay.h
 }
 
 unix:!macx {

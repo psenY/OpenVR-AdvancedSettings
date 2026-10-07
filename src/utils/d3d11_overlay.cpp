@@ -1,5 +1,6 @@
 #include "d3d11_overlay.h"
 
+#ifdef _WIN32
 
 namespace advsettings {
 
@@ -119,3 +120,5 @@ ID3D11Texture2D* D3D11Overlay::UpdateTexture( const void* pixels, int width,
 }
 
 } // namespace advsettings
+
+#endif // _WIN32

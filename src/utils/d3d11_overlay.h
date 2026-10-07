@@ -1,5 +1,7 @@
 #pragma once
 
+#ifdef _WIN32
+
 #include <d3d11.h>
 #include <wrl/client.h>
 #include <memory>
@@ -34,3 +36,5 @@ private:
 };
 
 } // namespace advsettings
+
+#endif // _WIN32

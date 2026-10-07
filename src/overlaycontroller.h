@@ -28,7 +28,9 @@
 
 #include "utils/ChaperoneUtils.h"
 
+#ifdef _WIN32
 #include "utils/d3d11_overlay.h"
+#endif
 
 #include "tabcontrollers/SteamVRTabController.h"
 #include "tabcontrollers/ChaperoneTabController.h"
@@ -113,7 +115,9 @@ private:
     QOpenGLContext m_openGLContext;
     QOffscreenSurface m_offscreenSurface;
 
+#ifdef _WIN32
     advsettings::D3D11Overlay m_d3d11Overlay;
+#endif
 
     QTimer m_pumpEventsTimer;
     std::unique_ptr<QTimer> m_pRenderTimer;

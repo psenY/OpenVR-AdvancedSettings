@@ -454,7 +454,9 @@ void OverlayController::Shutdown()
         m_pRenderTimer.reset();
     }
     m_pFbo.reset();
+#ifdef _WIN32
     m_d3d11Overlay.Shutdown();
+#endif
 }
 
 void OverlayController::SetWidget( QQuickItem* quickItem,
@@ -525,10 +527,12 @@ void OverlayController::SetWidget( QQuickItem* quickItem,
             static_cast<int>( quickItem->height() ),
             fboFormat ) );
 
+#ifdef _WIN32
         // Create the D3D11 overlay texture used to hand the rendered frame to
         // SteamVR without relying on WGL_NV_DX_interop (broken on Intel Arc).
         m_d3d11Overlay.Initialize( static_cast<int>( quickItem->width() ),
                                    static_cast<int>( quickItem->height() ) );
+#endif
 
         m_window.setRenderTarget( m_pFbo.get() );
         quickItem->setParentItem( m_window.contentItem() );
@@ -642,6 +646,7 @@ void OverlayController::renderOverlay()
         m_renderControl.sync();
         m_renderControl.render();
 
+#ifdef _WIN32
         if ( m_d3d11Overlay.IsReady() )
         {
             // D3D11 submission: read the OpenGL framebuffer back to the CPU
@@ -666,6 +671,26 @@ void OverlayController::renderOverlay()
                 }
             }
         }
+#endif
+        // Fallback, and the only path on non-Windows platforms: submit the
+        // OpenGL framebuffer texture directly.
+        GLuint unTexture = m_pFbo->texture();
+        if ( unTexture != 0 )
+        {
+#if defined _WIN64 || defined _LP64
+            // To avoid any compiler warning because of cast to a larger
+            // pointer type (warning C4312 on VC)
+            vr::Texture_t texture = { reinterpret_cast<void*>(
+                                          static_cast<uint64_t>( unTexture ) ),
+                                      vr::TextureType_OpenGL,
+                                      vr::ColorSpace_Auto };
+#else
+            vr::Texture_t texture = { reinterpret_cast<void*>( unTexture ),
+                                      vr::TextureType_OpenGL,
+                                      vr::ColorSpace_Auto };
+#endif
+            vr::VROverlay()->SetOverlayTexture( m_ulOverlayHandle, &texture );
+        }
         m_openGLContext.functions()->glFlush(); // We need to flush otherwise
                                                 // the texture may be empty.*/
     }
@@ -688,12 +713,19 @@ bool OverlayController::pollNextEvent( vr::VROverlayHandle_t ulOverlayHandle,
 QPoint OverlayController::getMousePositionForEvent( vr::VREvent_Mouse_t mouse )
 {
     float y = mouse.y;
-#if defined __linux__ || defined _WIN32
-    // The overlay texture submitted through the D3D11 path is top-down
-    // (Y increases downward), so the mouse Y coordinate must be flipped to
-    // match. Linux already did this for its own reasons.
+#if defined __linux__
+    // Linux needs the mouse Y coordinate flipped.
     float h = static_cast<float>( m_window.height() );
     y = h - y;
+#elif defined _WIN32
+    // The overlay texture submitted through the D3D11 path is top-down
+    // (Y increases downward), so the mouse Y coordinate must be flipped to
+    // match. The OpenGL path does not need this.
+    if ( m_d3d11Overlay.IsReady() )
+    {
+        float h = static_cast<float>( m_window.height() );
+        y = h - y;
+    }
 #endif
     return QPoint( static_cast<int>( mouse.x ), static_cast<int>( y ) );
 }
