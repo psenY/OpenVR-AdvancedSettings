@@ -1,14 +1,17 @@
-name: build-windows
+name: build
 
-# 手动触发 / 推送到本分支时构建 Windows 便携版
+# 手动触发 / 推送到这些分支时构建
 on:
   workflow_dispatch:
   push:
     branches:
       - fix-d3d11-overlay
+      - fix-d3d11-portable
+      - selfuse-zh
 
 jobs:
-  build:
+  windows:
+    name: windows (msvc, artifact)
     runs-on: windows-latest
     steps:
       - name: Checkout
@@ -42,3 +45,27 @@ jobs:
           name: AdvancedSettings-win64-d3d11
           path: bin/win64/**
           if-no-files-found: error
+
+  linux:
+    name: linux (g++, compile check)
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install Qt5 and build dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+            build-essential qtbase5-dev qtbase5-dev-tools qtdeclarative5-dev \
+            qtmultimedia5-dev qtquickcontrols2-5-dev libqt5websockets5-dev \
+            libqt5svg5-dev qttools5-dev-tools qt5-qmake \
+            libgl1-mesa-dev libx11-dev libxt-dev libxtst-dev libpulse-dev
+
+      - name: qmake + make (release)
+        run: |
+          qmake advancedSettings.pro -spec linux-g++ CONFIG+=release
+          make -j"$(nproc)"
+
+      - name: List output
+        run: ls -la bin/linux/ || true
